@@ -10,9 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_130618) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_113344) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "acupoint_treatments", id: false, force: :cascade do |t|
+    t.bigint "acupoint_id", null: false
+    t.bigint "symptom_id", null: false
+    t.index ["acupoint_id", "symptom_id"], name: "acupoint_symptom_index"
+    t.index ["symptom_id", "acupoint_id"], name: "symptom_acupoint_index"
+  end
+
+  create_table "acupoints", force: :cascade do |t|
+    t.string "name"
+    t.string "coordinates"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "essential_oils", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "oil_treatments", id: false, force: :cascade do |t|
+    t.bigint "essential_oil_id", null: false
+    t.bigint "symptom_id", null: false
+    t.text "[:posology]"
+    t.index ["essential_oil_id", "symptom_id"], name: "oil_symptom_index"
+    t.index ["symptom_id", "essential_oil_id"], name: "symptom_oil_index"
+  end
+
+  create_table "symptoms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
