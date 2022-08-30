@@ -7,6 +7,16 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'csv'
 
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'symptoms.csv'))
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  s = Symptom.new
+  s.name = row['name']
+  s.save
+  puts "#{s.name} saved"
+end
+
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'oils.csv'))
 csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
@@ -27,3 +37,4 @@ csv.each do |row|
   u.save
   puts "#{u.email} saved"
 end
+
