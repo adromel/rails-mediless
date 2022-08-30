@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_113344) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_131712) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,10 +36,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_113344) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "lists", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "essential_oil_id"
+    t.bigint "acupoint_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["acupoint_id"], name: "index_lists_on_acupoint_id"
+    t.index ["essential_oil_id"], name: "index_lists_on_essential_oil_id"
+    t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
   create_table "oil_treatments", id: false, force: :cascade do |t|
     t.bigint "essential_oil_id", null: false
     t.bigint "symptom_id", null: false
-    t.text "[:posology]"
+    t.text "posology"
     t.index ["essential_oil_id", "symptom_id"], name: "oil_symptom_index"
     t.index ["symptom_id", "essential_oil_id"], name: "symptom_oil_index"
   end
@@ -62,4 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_113344) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lists", "acupoints"
+  add_foreign_key "lists", "essential_oils"
+  add_foreign_key "lists", "users"
 end
