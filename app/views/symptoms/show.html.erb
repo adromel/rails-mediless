@@ -1,4 +1,8 @@
-<h1>Symptoms#show</h1>
-<p>Find me in app/views/symptoms/show.html.erb</p>
-
-#show des symptoms avec he solution et point solution
+<div class="container">
+  <h1>Oiltreatments</h1>
+  <% @oiltreatements.each do |o| %>
+    <%= o.essential_oil.name %>
+    <%= o.essential_oil_id %>
+    <%= o.posology %>
+  <% end %>
+</div>
