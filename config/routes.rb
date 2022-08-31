@@ -6,10 +6,9 @@ Rails.application.routes.draw do
 
   # vue de la recherche symptoms
   resources :symptoms do
-    resources :oil_treatments do
-      resources :essential_oils
-    end
+    resources :oil_treatments
   end
+  resources :essential_oils
 
 
     # resources :acu_points

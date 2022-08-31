@@ -1,2 +1,5 @@
-<h1>EssentialOils#show</h1>
-<p>Find me in app/views/essential_oils/show.html.erb</p>
+<div class="container">
+  <%= @essential_oil.name %>
+  <%= @essential_oil.description %>
+  <img src="<%= @essential_oil.photo %>" alt="picture">
+</div>

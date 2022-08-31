@@ -4,5 +4,7 @@
     <%= o.essential_oil.name %>
     <%= o.essential_oil_id %>
     <%= o.posology %>
+    <%= link_to "Voir plus", essential_oil_path(o.essential_oil_id)  %>
+    <img src="<%= o.essential_oil.photo %>" alt="picture">
   <% end %>
 </div>
