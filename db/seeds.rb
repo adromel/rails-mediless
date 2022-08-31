@@ -38,3 +38,13 @@ csv.each do |row|
   puts "#{u.email} saved"
 end
 
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'oil_treatment.csv'))
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  o = OilTreatment.new
+  o.essential_oil_id = row['essential_oil_id']
+  o.symptom_id = row['symptom_id']
+  o.posology = row['posology']
+  o.save
+  puts "#{o.essential_oil_id} saved"
+end
