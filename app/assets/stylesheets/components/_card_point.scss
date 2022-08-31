@@ -8,13 +8,15 @@
 
 .card-point {
   background: #FFFFFF;
-  height: 10vh;
+  height: auto;
   margin: 0 27px 0 21px;
   padding: 19px;
   display: flex;
+  text-align: left;
   flex-direction: column;
   justify-content: space-evenly;
-  margin-bottom: 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
   row-gap: 6px;
   /* align-items: flex-start; */
   border-radius: 12px;

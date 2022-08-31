@@ -12,22 +12,21 @@
 @import "pages/index";
 
 .container {
-  margin: 0px 15px;
+  height: auto;
+  margin: 0px auto;
+  text-align: center;
+  width: 390px;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 10px;
+  row-gap: 40px;
+  padding-bottom: 160px;
+  padding-top: 60px;
 }
 
-// html {
-//   background-color: gray;
-// }
-
-// body {
-//   margin: 0;
-//   font-family: 'Open Sans', sans-serif;
-// }
+body {
+}
 
 body p {
   color: black;

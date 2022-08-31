@@ -1,17 +1,18 @@
-
 a {
   text-decoration: none;
   font-size: 1rem;
   color: white;
+  outline: none;
 }
+
 
 .button-search {
   padding: 12px 16px;
   background: #65C18C;
-  width: 25vw;
+  width: 35vw;
   text-align: center;
-  margin-left: 10px;
-  border-radius: 20px;
+  // margin-left: 10px;
+  border-radius: 10px;
   margin: 0 auto;
   border-radius: 8px;
 }
@@ -22,9 +23,8 @@ a {
   width: 223px;
   text-align: center;
   // margin-left: 10px;
-  border-radius: 20px;
-  margin: 0 auto;
-  border-radius: 8px;
+  border-radius: 10px;
+
 }
 
 .button-save-acupoint {
@@ -36,4 +36,5 @@ a {
   border-radius: 20px;
   margin: 0 auto;
   border-radius: 8px;
+  margin-bottom: 10px
 }
