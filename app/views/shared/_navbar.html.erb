@@ -1,36 +1,22 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+      <div class="navbar">
+        <svg width="390" height="200" viewBox="0 0 390 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M126.734 37C141.212 37 149.949 25.5682 159.828 14.9841C167.859 6.37958 182.301 0 195 0C207.699 0 221.141 6.37958 229.172 14.9841C239.051 25.5682 248.788 37 263.266 37H390V135.5H0L0 37H126.734Z" class="svg-background" />
+        </svg>
+        <ul class="icon-list">
+          <div class="first">
+            <li><i class="fa-solid fa-house fa-lg"></i></li>
+            <li><i class="fa-regular fa-bookmark fa-lg"></i></li>
             </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+          <div class="circle">
+            <li><i class="fa-solid fa-magnifying-glass fa-5x"></i></li>
+          </div>
+          <div class="second">
+            <li><i class="fa-solid fa-user fa-lg"></i></li>
+            <li><i class="fa-solid fa-location-dot fa-lg"></i></i></li>
+          </div>
+        </ul>
+      </div>
   </div>
 </div>

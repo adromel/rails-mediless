@@ -1,0 +1,41 @@
+.card-essential-oil {
+  background-color: #80CCA0;
+  height: 200px;
+  width: 100%;
+  border-radius: 20px;
+  margin-left: 10px;
+  display: flex;
+  text-align: left;
+  column-gap: 10px;
+  margin: 0 auto;
+}
+
+
+.text {
+  color: white;
+  padding-top: 5px;
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  font-size: 40px;
+}
+
+.text p {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+.text h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#picture img {
+  background-color: gray;
+  height: 180px;
+  border-radius: 20px;
+  width: 160px;
+  margin-top: 10px;
+  margin-left: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
