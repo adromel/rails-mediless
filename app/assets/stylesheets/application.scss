@@ -10,3 +10,42 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.container {
+  margin: 0px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+
+html {
+  background-color: gray;
+}
+
+// body {
+//   margin: 0;
+//   font-family: 'Open Sans', sans-serif;
+// }
+
+body p {
+  color: black;
+  font-size: 1rem;
+}
+
+body h1 {
+  color: black;
+  font-size: 2rem;
+}
+
+body h2 {
+  color: black;
+  font-size: 1,5rem;
+
+}
+
+body h3 {
+  color: black;
+  font-size: 1,25rem;
+}
