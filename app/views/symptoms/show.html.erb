@@ -1,5 +1,7 @@
 <div class="container">
-  <h1>Oiltreatments</h1>
+  <p>Nous avons trouvé <%= @acupointtreatments.count %> points d'acupression pour le symptôme : <%= @symptom.name %>. Clique pour visualiser la modélisation et les méthodes de pressions de ces points.</p>
+
+
   <% @oiltreatements.each do |o| %>
     <%= o.essential_oil.name %>
     <%= o.essential_oil_id %>

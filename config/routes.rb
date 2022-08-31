@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   end
   resources :essential_oils
 
+  resources :symptoms do
+    resources :acupoint_treatments
+  end
+  resources :acu_points
 
-    # resources :acu_points
-
+  
   # get '/symptoms/:id', to: 'symptoms#show'
   get "/test", to: "pages#test"
 
