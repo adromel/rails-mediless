@@ -12,7 +12,7 @@
 @import "pages/index";
 
 .container {
-  margin: 0px;
+  margin: 0px 15px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -20,9 +20,9 @@
   row-gap: 10px;
 }
 
-html {
-  background-color: gray;
-}
+// html {
+//   background-color: gray;
+// }
 
 // body {
 //   margin: 0;
