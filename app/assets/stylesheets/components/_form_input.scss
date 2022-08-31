@@ -1,18 +1,25 @@
 .form-input {
-  width: 80%;
+  width: 90%;
+  // position: relative;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  background-color: #C8E9D6;
+  padding: 0;
 }
 
 input {
   padding-left: 15px;
-  height: 40px;
+  height: 49px;
   width: 100%;
   margin: 0 auto;
-  background-color: #C8E9D6;
-  font-size: 1rem;
-  border-radius: 20px;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  background-color: transparent;
   width: 100%;
   border: none;
   color: black;
   font-weight: 200;
   outline: none;
+  text-align: left;
 }

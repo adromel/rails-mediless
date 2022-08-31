@@ -9,28 +9,30 @@ a {
 .button-search {
   padding: 12px 16px;
   background: #65C18C;
-  width: 35vw;
+  // width: 35vw;
   text-align: center;
   // margin-left: 10px;
-  border-radius: 10px;
-  margin: 0 auto;
   border-radius: 8px;
+  // margin: 0 auto;
+  // position: absolute;
+  // top: 0px;
+  // right: 0px;
 }
 
-.button-save-essential-oil {
+.button-small {
   padding: 12px 16px;
   background: #65C18C;
   width: 223px;
   text-align: center;
   // margin-left: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
 
 }
 
-.button-save-acupoint {
+.button-large {
   padding: 12px 16px;
   background: #65C18C;
-  width: 312px;
+  width: 100%;
   text-align: center;
   // margin-left: 10px;
   border-radius: 20px;

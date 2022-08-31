@@ -1,4 +1,4 @@
-.card-point-wt-passetille {
+.card-acupoint-wt-frame {
   position: relative;
 
   display: flex;
@@ -6,34 +6,34 @@
   row-gap: 10px;
 }
 
-.card-point {
+.card-acupoint {
   background: #FFFFFF;
   height: auto;
-  margin: 0 27px 0 21px;
+  // margin: 0 27px 0 21px;
   padding: 19px;
   display: flex;
   text-align: left;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  // padding-top: 60px;
+  // padding-bottom: 60px;
   row-gap: 6px;
   /* align-items: flex-start; */
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(53, 106, 76, 0.2);
 }
 
-.card-point h3 {
+.card-acupoint h3 {
   object-fit: fill;
   margin: 0;
   font-size: 20px;
 }
 
-.card-point p {
+.card-acupoint p {
   margin: 0;
 }
 
-.card-point-container {
+.card-acupoint-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
