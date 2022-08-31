@@ -6,14 +6,16 @@ Rails.application.routes.draw do
 
   # vue de la recherche symptoms
   resources :symptoms do
-    resources :oil_treatments do
-      resources :essential_oils
-    end
+    resources :oil_treatments
   end
+  resources :essential_oils
 
+  resources :symptoms do
+    resources :acupoint_treatments
+  end
+  resources :acu_points
 
-    # resources :acu_points
-
+  
   # get '/symptoms/:id', to: 'symptoms#show'
   get "/test", to: "pages#test"
 
