@@ -1,0 +1,33 @@
+.description {
+  background-color: #80CCA0;
+  border-radius: 8px;
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 10px;
+}
+
+.description p {
+  object-fit: fill;
+  margin: 0;
+  color: white;
+}
+
+.description h3 {
+  object-fit: fill;
+  margin: 0;
+  color: white;
+}
+
+.icon-add {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.icon-add .fa-comment-dots {
+  color: #356A4C;
+}

@@ -1,0 +1,29 @@
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 10px;
+  box-shadow: 0px 4px 10px rgba(53, 106, 76, 0.2);
+  border-radius: 20px;
+  height: 20vh;
+}
+
+.content-text h1 {
+  font-size: 1.5rem;
+}
+
+.content-text p {
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+.content-text a {
+  color: #449768;
+  text-decoration: underline;
+}
+
+#image {
+  height: 15vh;
+  width: 30vw;
+  border-radius: 20px;
+}
