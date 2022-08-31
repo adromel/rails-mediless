@@ -1,13 +1,13 @@
 @import "components/navbar.css";
-@import "components/passetille.css";
+@import "components/frame.css";
 @import "components/logo-mediless.css";
 @import "components/card-point.css";
 @import "components/button.css";
 @import "components/background.css";
 @import "components/card-essential-oil.css";
-@import "components/huiles-essentielles.css";
+/* @import "components/huiles-essentielles.css"; */
 @import "components/form-input.css";
-@import "components/card-menthe-poivree.css";
+@import "components/card_essential_oil.css";
 @import "components/descrption.css";
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
 
