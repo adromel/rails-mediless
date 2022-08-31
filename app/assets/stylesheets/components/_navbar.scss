@@ -8,7 +8,9 @@
 
 .navbar {
   position: fixed;
-  // bottom: -36px;
+  // top: 0;
+  bottom: -60px;
+  left: 0;
 }
 
 .icon-list {
@@ -28,6 +30,7 @@ ul {
   list-style-type: none;
   margin: 0;
   height: 100%;
+
 }
 
 .first {
@@ -47,4 +50,5 @@ ul {
 .svg-background {
   fill: white;
   filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 5px 15px);
+  width: 100%;
 }
