@@ -48,3 +48,22 @@ csv.each do |row|
   o.save
   puts "#{o.essential_oil_id} saved"
 end
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'acupoints.csv'))
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  a = Acupoint.new
+  a.name = row['name']
+  a.save
+  puts "#{a.name} saved"
+end
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'acupointTreatment.csv'))
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  at = AcupointTreatment.new
+  at.symptom_id = row['symptom_id']
+  at.acupoint_id = row['acupoint_id']
+  at.save
+  puts "#{at.acupoint_id} saved"
+end
