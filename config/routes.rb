@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'acu_points/show'
+  get 'essential_oils/show'
+  get 'symptoms/show'
   devise_for :users
   root to: "pages#home"
 
