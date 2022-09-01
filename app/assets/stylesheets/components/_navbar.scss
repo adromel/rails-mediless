@@ -1,11 +1,13 @@
-
-
 .fa-magnifying-glass:before {
 
   position: absolute;
   top: 50px;
   left: 140px;
+  color: black;
+}
 
+.fa-house::before {
+  color: black;
 }
 
 .navbar {

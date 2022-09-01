@@ -6,14 +6,20 @@
         </svg>
         <ul class="icon-list">
           <div class="first">
+          <%= link_to root_path do %>
             <li><i class="fa-solid fa-house fa-lg"></i></li>
+          <% end %>
             <li><i class="fa-regular fa-bookmark fa-lg"></i></li>
             </div>
           <div class="circle">
-            <li><i class="fa-solid fa-magnifying-glass fa-5x"></i></li>
+            <%= link_to root_path do %>
+              <li><i class="fa-solid fa-magnifying-glass fa-5x"></i></li>
+            <% end %>
           </div>
           <div class="second">
-            <li><i class="fa-solid fa-user fa-lg"></i></li>
+
+              <li><i class="fa-solid fa-user fa-lg"></i></li>
+
             <li><i class="fa-solid fa-location-dot fa-lg"></i></i></li>
           </div>
         </ul>
