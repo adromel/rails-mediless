@@ -11,4 +11,13 @@ class SymptomsController < ApplicationController
     @acupointtreatments = AcupointTreatment.where(symptom_id: @symptom.id)
   end
 
+  def search
+    @symtpoms = Symptom.where("name ILIKE ?", "%#{params[:query]}%")
+
+    if  params[:query].present? && @airports.exists?
+      render :search, layout: false
+    else
+      render plain: ''
+    end
+  end
 end
