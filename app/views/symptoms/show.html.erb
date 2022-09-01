@@ -15,7 +15,7 @@
     <div class="content-saved">
       <img src="<%= o.essential_oil.photo %>" id="image-saved" alt="">
       <div class="content-saved-text">
-        <h1><%= o.essential_oil.name %></h1>
+        <h1><%= link_to o.essential_oil.name, essential_oil_path %></h1>
         <p><%= o.posology %></p>
         <%= link_to 'Voir plus', essential_oil_path %>
       </div>
