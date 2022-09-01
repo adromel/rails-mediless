@@ -1,6 +1,18 @@
-<div class="form-input">
-  <input type="text" id="name" name="name" placeholder="Recherche un symptôme...">
-  <div class="button-search">
-    <a href="#">Recherche</a>
-  </div>
-</div>
+<%# <form action="" class="form-input" data-controller="search-input"> %>
+<%= form_with url: symptoms_path, method: :get do |f| %>
+  <%= f.collection_select :name, Symptom.all, :id, :name %>
+  <%= f.submit %>
+
+
+  <input id="name" name="name" placeholder="Recherche un symptôme..."
+  data-search-input-target="input"
+  data-action="input->search-input#research"
+  >
+
+  <input
+  type="submit"
+  value="Rechercher"
+  class="button-search"
+  data-search-input-target="search"
+  data-action="click->search-input#research">
+<% end %>

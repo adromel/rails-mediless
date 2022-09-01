@@ -12,7 +12,8 @@ export default class extends Controller {
   }
   research(event) {
     console.log(event)
-        fetch(`/search?query=${this.inputTarget.value}`)
+    fetch(`/search?query=${this.inputTarget.value}`)
+
     .then(response => response.text())
     .then((htmlResult) => {
       this.listTarget.innerHTML = htmlResult
