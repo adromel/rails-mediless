@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   # get '/symptoms/:id', to: 'symptoms#show'
   get "/test", to: "pages#test"
+  get "threejs", to: "pages#threejs"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
