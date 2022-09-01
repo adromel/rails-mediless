@@ -12,12 +12,13 @@
     <p>Nous avons trouvé <strong><%= @oiltreatements.count %></strong> pour les <strong><%= @symptom.name %></strong></p>
   </strong>
   <% @oiltreatements.each do |o| %>
-    <div class="content-saved">
+    <div class="content-saved" data-controller="posology">
       <img src="<%= o.essential_oil.photo %>" id="image-saved" alt="">
-      <div class="content-saved-text">
+      <div class="content-saved-text set-posology" data-posology-target="text">
         <h1><%= link_to o.essential_oil.name, essential_oil_path %></h1>
         <p><%= o.posology %></p>
-        <%= link_to 'Voir plus', essential_oil_path %>
+        <a href="" data-action="click->posology#toggle"
+        data-posology-target="link">Voir plus</a>
       </div>
     </div>
   <% end %>
