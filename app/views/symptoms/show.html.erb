@@ -1,12 +1,27 @@
 <div class="container">
-  <p>Nous avons trouvé <%= @acupointtreatments.count %> points d'acupression pour le symptôme : <%= @symptom.name %>. Clique pour visualiser la modélisation et les méthodes de pressions de ces points.</p>
+  <div class="head-fixed">
+    <h1><%= @symptom.name %></h1>
+  </div>
 
-
+  <div class="acupoint">
+    <p>Nous avons trouvé <%= @acupointtreatments.count %> points d'acupression pour le symptôme : <%= @symptom.name %>. Clique pour visualiser la modélisation et les méthodes de pressions de ces points.</p>
+    <%= render 'shared/button_large' %>
+  </div>
+  <div class="span-content">
+    <span>Huiles essentielles</span>
+    <p>Nous avons trouvé <strong><%= @oiltreatements.count %></strong> pour les <strong><%= @symptom.name %></strong></p>
+  </strong>
   <% @oiltreatements.each do |o| %>
-    <%= o.essential_oil.name %>
-    <%= o.essential_oil_id %>
-    <%= o.posology %>
-    <%= link_to "Voir plus", essential_oil_path(o.essential_oil_id)  %>
-    <img src="<%= o.essential_oil.photo %>" alt="picture">
+    <div class="content-saved" data-controller="posology">
+      <img src="<%= o.essential_oil.photo %>" id="image-saved" alt="">
+      <div class="content-saved-text set-posology" data-posology-target="text">
+        <h1><%= link_to o.essential_oil.name, essential_oil_path %></h1>
+        <p><%= o.posology %></p>
+        <a href="" data-action="click->posology#toggle"
+        data-posology-target="link">Voir plus</a>
+      </div>
+    </div>
   <% end %>
+
+  <%= render 'shared/navbar' %>
 </div>
