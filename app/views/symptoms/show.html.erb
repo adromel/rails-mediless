@@ -1,17 +1,23 @@
 <div class="container">
   <div class="head-fixed">
-    <span><%= @symptom.name %></span>
+    <h1><%= @symptom.name %></h1>
   </div>
 
-  <p>Nous avons trouvé <%= @acupointtreatments.count %> points d'acupression pour le symptôme : <%= @symptom.name %>. Clique pour visualiser la modélisation et les méthodes de pressions de ces points.</p>
-
+  <div class="acupoint">
+    <p>Nous avons trouvé <%= @acupointtreatments.count %> points d'acupression pour le symptôme : <%= @symptom.name %>. Clique pour visualiser la modélisation et les méthodes de pressions de ces points.</p>
+    <%= render 'shared/button_large' %>
+  </div>
+  <div class="span-content">
+    <span>Huiles essentielles</span>
+    <p>Nous avons trouvé <strong><%= @oiltreatements.count %></strong> pour les <strong><%= @symptom.name %></strong></p>
+  </strong>
   <% @oiltreatements.each do |o| %>
     <div class="content-saved">
       <img src="<%= o.essential_oil.photo %>" id="image-saved" alt="">
       <div class="content-saved-text">
         <h1><%= o.essential_oil.name %></h1>
         <p><%= o.posology %></p>
-        <a href="#">Voir plus</a>
+        <%= link_to 'Voir plus', essential_oil_path %>
       </div>
     </div>
   <% end %>
