@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+  #vue de la recherche home
+  get 'search', to: 'symptoms#search'
+
 
   # vue de la recherche symptoms
   resources :symptoms do
@@ -15,7 +18,7 @@ Rails.application.routes.draw do
   end
   resources :acu_points
 
-  
+
   # get '/symptoms/:id', to: 'symptoms#show'
   get "/test", to: "pages#test"
 

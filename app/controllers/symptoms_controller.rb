@@ -12,10 +12,10 @@ class SymptomsController < ApplicationController
   end
 
   def search
-    @symtpoms = Symptom.where("name ILIKE ?", "%#{params[:query]}%")
+    @symptoms = Symptom.where("name ILIKE ?", "%#{params[:query]}%")
 
-    if  params[:query].present? && @airports.exists?
-      render :search, layout: false
+    if params[:query].present? && @symptoms.exists?
+      render "search", layout: false
     else
       render plain: ''
     end
