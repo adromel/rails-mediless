@@ -6,8 +6,6 @@ class EssentialOilsController < ApplicationController
   end
 
   def save
-
   end
-
 
 end
