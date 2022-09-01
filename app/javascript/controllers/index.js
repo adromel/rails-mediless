@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import SearchInputController from "./search_input_controller"
 application.register("search-input", SearchInputController)
+
+import ThreejsController from "./threejs_controller"
+application.register("threejs", ThreejsController)
