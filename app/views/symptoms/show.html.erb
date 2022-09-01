@@ -1,12 +1,20 @@
 <div class="container">
+  <div class="head-fixed">
+    <span><%= @symptom.name %></span>
+  </div>
+
   <p>Nous avons trouvé <%= @acupointtreatments.count %> points d'acupression pour le symptôme : <%= @symptom.name %>. Clique pour visualiser la modélisation et les méthodes de pressions de ces points.</p>
 
-
   <% @oiltreatements.each do |o| %>
-    <%= o.essential_oil.name %>
-    <%= o.essential_oil_id %>
-    <%= o.posology %>
-    <%= link_to "Voir plus", essential_oil_path(o.essential_oil_id)  %>
-    <img src="<%= o.essential_oil.photo %>" alt="picture">
+    <div class="content-saved">
+      <img src="<%= o.essential_oil.photo %>" id="image-saved" alt="">
+      <div class="content-saved-text">
+        <h1><%= o.essential_oil.name %></h1>
+        <p><%= o.posology %></p>
+        <a href="#">Voir plus</a>
+      </div>
+    </div>
   <% end %>
+
+  <%= render 'shared/navbar' %>
 </div>
