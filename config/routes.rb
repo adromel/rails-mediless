@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
   resources :acu_points
 
+  resources :list_elements
 
   # get '/symptoms/:id', to: 'symptoms#show'
   get "/test", to: "pages#test"
