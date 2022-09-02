@@ -20,14 +20,24 @@ class ListElementsController < ApplicationController
       @essential_oil = EssentialOil.find(params[:essential_oil_id])
       @listable_essential_oil = ListElement.create(user: current_user, listable: @essential_oil)
       if @listable_essential_oil.save
-        redirect_to essential_oil_path(@essential_oil), notice: "fonctionné"
+        redirect_to @essential_oil, notice: "élement sauvegardé"
       else
-        redirect_to essential_oil_path(@essential_oil), notice: "pas marché"
+        redirect_to essential_oil_path(@essential_oil), notice: "Sauvegarder échouée"
       end
     elsif params[:acupoint_id].present?
       @acupoint = Acupoint.find(params[:acupoint_id])
       @listable_acupoint = ListElement.create(user: current_user, listable: @acupoint)
       redirect_to acupoint_path(@acupoint)
     end
+  end
+
+  # récupérer le list element
+  # s'il en a un alors supprimer
+  # pas besoin de récupérer l'id card déjà associé à id
+
+  def destroy
+    @list_element = ListElement.find(params[:id])
+    @list_element.destroy
+    redirect_to @list_element.listable, notice: "élément non sauvegardé"
   end
 end
