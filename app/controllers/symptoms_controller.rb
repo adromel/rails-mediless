@@ -1,6 +1,6 @@
 class SymptomsController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_symptom, only: %i[ show ]
+  before_action :set_symptom, only: %i[ show acupoints ]
 
   def index
     @symptoms = Symptom.all
@@ -9,6 +9,10 @@ class SymptomsController < ApplicationController
   def show
     @oiltreatements = OilTreatment.where(symptom_id: @symptom.id)
     @acupointtreatments = AcupointTreatment.where(symptom_id: @symptom.id)
+  end
+
+  def acupoints
+    @acupoints = @symptom.acupoints
   end
 
   def search
