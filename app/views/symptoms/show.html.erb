@@ -1,5 +1,8 @@
 <div class="container">
   <div class="head-fixed">
+   <%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left fa-2x"></i>
+    <% end %>
     <h1><%= @symptom.name %></h1>
   </div>
   <% if @symptom.acupoints.present? %>

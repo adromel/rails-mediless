@@ -1,5 +1,19 @@
 <div class="container">
-  <%= @essential_oil.name %>
-  <%= @essential_oil.description %>
-  <img src="<%= @essential_oil.photo %>" alt="picture">
+  <div class="head-fixed">
+    <%= link_to symptom_path do %>
+      <i class="fa-solid fa-arrow-left fa-2x"></i>
+    <% end %>
+    <h1><%= @essential_oil.name %></h1>
+  </div>
+  <div class="oil-essential-picture">
+    <img src="<%= @essential_oil.photo %>" alt="picture">
+  </div>
+  <div class="background-content center">
+    <%= render 'shared/description' %>
+    <%= @essential_oil.description %>
+    <div class="button-small mx-1">
+      <%= link_to 'Sauvegarder cette huile', list_elements_path  %>
+    </div>
+  </div>
+  <%= render 'shared/navbar' %>
 </div>
