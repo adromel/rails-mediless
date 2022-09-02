@@ -1,13 +1,12 @@
 <div class="container">
-<<<<<<< HEAD
   <div class="head-fixed">
    <%= link_to root_path do %>
       <i class="fa-solid fa-arrow-left fa-2x"></i>
     <% end %>
      <h1><%= @symptom.name %></h1>
   </div>
+  <div data-controller="threejs" data-threejs-scene-path-value="<%= asset_url('scene.gltf')%>"></div>
   <div class="card-acupoint-wt-frame show">
-   <div data-controller="threejs" data-threejs-scene-path-value="<%= asset_url('scene.gltf')%>"></div>
     <div class="point-general-container general" data-controller="posology">
       <% @acupoints.each_with_index do |acupoint, index| %>
         <div class="card-acupoint set-posology" data-posology-target="text" id="margin-b">
