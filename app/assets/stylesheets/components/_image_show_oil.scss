@@ -1,0 +1,29 @@
+.oil-essential-picture {
+  margin-top: 30px;
+  height: 40vh;
+  width: 80vw;
+  border-radius: 14.32px;
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 14.32px;
+    box-shadow: rgba(53, 106, 76, 0.2) 0px 4px 10px;
+  }
+}
+
+a {
+  .fa-arrow-left {
+    color:  hsl(146, 38%, 43%);;
+    margin-top: 30px;
+    position: fixed;
+    left: 30px;
+    top: -20px;
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
