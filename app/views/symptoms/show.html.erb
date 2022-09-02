@@ -2,11 +2,16 @@
   <div class="head-fixed">
     <h1><%= @symptom.name %></h1>
   </div>
-
-  <div class="acupoint">
-    <p>Nous avons trouvé <%= @acupointtreatments.count %> points d'acupression pour le symptôme : <%= @symptom.name %>. Clique pour visualiser la modélisation et les méthodes de pressions de ces points.</p>
-    <%= render 'shared/button_large' %>
-  </div>
+  <% if @symptom.acupoints.present? %>
+    <div class="acupoint">
+      <p>Nous avons trouvé <%= @acupointtreatments.count %> points d'acupression pour le symptôme : <%= @symptom.name %>. Clique pour visualiser la modélisation et les méthodes de pressions de ces points.</p>
+      <%= render 'shared/button_large' %>
+    </div>
+  <% else %>
+    <div class="acupoint">
+      <p>Nous n'avons pas trouvé de points d'acupression pour ce symptom.</p>
+    </div>
+  <% end %>
   <div class="span-content">
     <span>Huiles essentielles</span>
     <p>Nous avons trouvé <strong><%= @oiltreatements.count %></strong> pour les <strong><%= @symptom.name %></strong></p>
