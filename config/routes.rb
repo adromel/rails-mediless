@@ -8,13 +8,14 @@ Rails.application.routes.draw do
 
 
   # vue de la recherche symptoms
-  resources :symptoms do
-    resources :oil_treatments
-  end
   resources :essential_oils
 
   resources :symptoms do
+    member do
+      get :acupoints
+    end
     resources :acupoint_treatments
+    resources :oil_treatments
   end
   resources :acu_points
 
