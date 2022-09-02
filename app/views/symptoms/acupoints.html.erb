@@ -1,5 +1,26 @@
 <div class="container">
-  <% @acupoints.each do |acupoint| %>
-    <%= acupoint.name %>
-  <% end %>
-</div>
+  <div class="head-fixed">
+   <%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left fa-2x"></i>
+    <% end %>
+     <h1><%= @symptom.name %></h1>
+  </div>
+  <div class="card-acupoint-wt-frame">
+    <div class="point-general-container" data-controller="posology">
+      <% @acupoints.each_with_index do |acupoint, index| %>
+        <div class="card-acupoint set-posology" data-posology-target="text">
+          <div class="frame-content">
+            <span><%= index + 1 %></span>
+          </div>
+          <h3><%= acupoint.name %></h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat culpa ipsam est facere cum atque incidunt, magni eius error eligendi in illum architecto inventore reprehenderit dolores praesentium nam, ut perspiciatis!xxzzz.Rentres un symptôme et tu trouveras une liste des techniques naturelles pour te soulager.</p>
+          <a href="" data-action="click->posology#toggle"
+          data-posology-target="link">Voir plus</a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+    <div class="button-large">
+      <a href="#">Enregistrer cette huile</a>
+    </div>
+  </div>
