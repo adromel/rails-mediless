@@ -1,4 +1,4 @@
-class List < ApplicationRecord
+class ListElement < ApplicationRecord
   belongs_to :user
   belongs_to :essential_oil, optional: true
   belongs_to :acupoint, optional: true

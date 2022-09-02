@@ -12,7 +12,7 @@
     <%= render 'shared/description' %>
     <%= @essential_oil.description %>
     <div class="button-small mx-1">
-      <%= link_to 'Sauvegarder cette huile', list_elements_path  %>
+      <%= link_to "Save", essential_oil_list_elements_path(@essential_oil), data: {turbo_method: :post} %>
     </div>
   </div>
   <%= render 'shared/navbar' %>
