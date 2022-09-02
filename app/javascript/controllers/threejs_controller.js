@@ -38,5 +38,19 @@ export default class extends Controller {
 	    console.error( error );
 
     });
+
+    function animate() {
+
+      requestAnimationFrame( animate );
+
+      // required if controls.enableDamping or controls.autoRotate are set to true
+      controls.update();
+
+      renderer.render( scene, camera );
+
+    };
+
+    animate();
+
   }
 }
