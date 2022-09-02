@@ -5,22 +5,24 @@
     <% end %>
      <h1><%= @symptom.name %></h1>
   </div>
-  <div class="card-acupoint-wt-frame">
-    <div class="point-general-container" data-controller="posology">
+  <div class="card-acupoint-wt-frame show">
+  <img src="https://preview.free3d.com/img/2018/03/2397296498158077235/tvf3xv0z-900.jpg" alt="">
+    <div class="point-general-container general" data-controller="posology">
       <% @acupoints.each_with_index do |acupoint, index| %>
-        <div class="card-acupoint set-posology" data-posology-target="text">
-          <div class="frame-content">
+        <div class="card-acupoint set-posology" data-posology-target="text" id="margin-b">
+          <div class="frame-content" id="frame-other">
             <span><%= index + 1 %></span>
           </div>
-          <h3><%= acupoint.name %></h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat culpa ipsam est facere cum atque incidunt, magni eius error eligendi in illum architecto inventore reprehenderit dolores praesentium nam, ut perspiciatis!xxzzz.Rentres un symptôme et tu trouveras une liste des techniques naturelles pour te soulager.</p>
+          <span>Point: <strong><%= acupoint.name %></strong></span>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat culpa ipsam est facere cum atque incidunt, magni eius error eligendi in illum architecto inventore reprehenderit dolores praesentium nam, ut perspiciatis! Rentres un symptôme et tu trouveras une liste des techniques naturelles pour te soulager.</p>
           <a href="" data-action="click->posology#toggle"
           data-posology-target="link">Voir plus</a>
         </div>
+          <div class="button-large" id="margin-b">
+            <a href="#">Enregistrer cette huile</a>
+          </div>
       <% end %>
     </div>
   </div>
-    <div class="button-large">
-      <a href="#">Enregistrer cette huile</a>
-    </div>
-  </div>
+  <%= render 'shared/navbar' %>
+</div>
