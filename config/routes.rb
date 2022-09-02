@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :oil_treatments
   end
   resources :essential_oils do
-    resources :list_elements
+    resources :list_elements, only: :create
   end
 
 
@@ -26,10 +26,12 @@ Rails.application.routes.draw do
     resources :oil_treatments
   end
   resources :acupoints do
-    resources :list_elements
+    resources :list_elements, only: :create
   end
 
   # get '/symptoms/:id', to: 'symptoms#show'
+  resources :list_elements, only: :destroy
+
   get "/test", to: "pages#test"
   get "threejs", to: "pages#threejs"
 
