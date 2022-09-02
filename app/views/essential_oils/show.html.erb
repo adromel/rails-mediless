@@ -2,4 +2,5 @@
   <%= @essential_oil.name %>
   <%= @essential_oil.description %>
   <img src="<%= @essential_oil.photo %>" alt="picture">
+  <%= link_to "Save", essential_oil_list_elements_path(@essential_oil), data: {turbo_method: :post} %>
 </div>
