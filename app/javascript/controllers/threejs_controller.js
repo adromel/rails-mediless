@@ -6,6 +6,8 @@ import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 
 // Connects to data-controller="threejs"
 export default class extends Controller {
+  static values = {scenePath: String}
+
   connect() {
     console.log("Threejs controller connected")
 
@@ -21,7 +23,7 @@ export default class extends Controller {
     this.element.appendChild( renderer.domElement );
     let controls = new OrbitControls(camera, renderer.domElement);
 
-    loader.load( 'scene.gltf', function ( gltf ) {
+    loader.load( this.scenePathValue, function ( gltf ) {
       let body = gltf.scene;  // body 3D object is loaded
       body.scale.set(1, 1, 1);
       body.position.y = -1;

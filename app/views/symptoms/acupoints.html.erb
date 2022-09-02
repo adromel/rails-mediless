@@ -1,4 +1,5 @@
 <div class="container">
+
   <div class="head-fixed">
    <%= link_to symptom_path(@symptom) do %>
       <i class="fa-solid fa-arrow-left fa-2x"></i>
@@ -24,5 +25,11 @@
       <% end %>
     </div>
   </div>
+
+  <% @acupoints.each do |acupoint| %>
+    <%= acupoint.name %>
+  <% end %>
+  <div data-controller="threejs" data-threejs-scene-path-value="<%= asset_url('scene.gltf')%>"></div>
+
   <%= render 'shared/navbar' %>
 </div>
