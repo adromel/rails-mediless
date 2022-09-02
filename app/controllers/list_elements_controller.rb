@@ -1,22 +1,33 @@
-class ListsController < ApplicationController
+class ListElementsController < ApplicationController
   before_action :authenticate_user!
 
-  # def index
-  #   @list_elements = List.all
-  # end
+  # récupérer l'id de User
+  # id Huile essentielle ou id Acupoint
 
-  # def create
-  #   @listable_id = current_user.list_elements.create!(remedy_params)
-  #   redirect_to user_lists_elements_path(current_user)
-  # end
+  # récupérer l'id de listable_type
+  # récupérer le list table de listable_id
 
-  # private
+  # récupérer les attributs pour type
+  # récupérer le reste pour chaque type
 
-  # def set_essential_oils
-  #   @listtable_id = List.find(params[:id])
-  # end
+  def index
+    # @list_element = ListElement.all
+  end
 
-  # def remedy_params
-  #   params.require(:essential_oil, :acupoint).permit(:name)
-  # end
+  def create
+    # ListElement.new(listable: essential_oil)
+    if params[:essential_oil_id].present?
+      @essential_oil = EssentialOil.find(params[:essential_oil_id])
+      @listable_essential_oil = ListElement.create(user: current_user, listable: @essential_oil)
+      if @listable_essential_oil.save
+        redirect_to essential_oil_path(@essential_oil), notice: "fonctionné"
+      else
+        redirect_to essential_oil_path(@essential_oil), notice: "pas marché"
+      end
+    elsif params[:acupoint_id].present?
+      @acupoint = Acupoint.find(params[:acupoint_id])
+      @listable_acupoint = ListElement.create(user: current_user, listable: @acupoint)
+      redirect_to acupoint_path(@acupoint)
+    end
+  end
 end
