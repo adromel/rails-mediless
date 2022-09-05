@@ -45,4 +45,5 @@ class ListElementsController < ApplicationController
     @list_element.destroy
     redirect_to @list_element.listable, notice: "élément non sauvegardé"
   end
+
 end
