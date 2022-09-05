@@ -13,6 +13,8 @@ class SymptomsController < ApplicationController
 
   def acupoints
     @acupoints = @symptom.acupoints
+    @acupoint = Acupoint.find(params[:id])
+    @list_element = ListElement.find_by(listable: @acupoint, user: current_user)
   end
 
   def search
