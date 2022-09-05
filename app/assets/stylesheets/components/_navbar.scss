@@ -83,7 +83,7 @@
   text-decoration: none;
   // color: black;
   height: 100%;
-  width: 50px;
+  width: 100%;
   display: inline-grid;
   font-size: 1rem;
   z-index: 1;
@@ -124,4 +124,21 @@
   transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   // box-shadow: #A4DABB 0px 1px 4px;
   /* cubic-bezier(0.175, 0.885, 0.32, 1.275) */
+}
+
+.btn-secondary {
+  background-color: white;
+  border: none;
+}
+
+.btn-check:checked + .btn, .btn-check:active + .btn, .btn:active, .btn.active, .btn.show {
+  border: none;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.fa-solid {
+  color: black;
 }
