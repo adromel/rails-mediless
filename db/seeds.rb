@@ -17,7 +17,7 @@ csv.each do |row|
   puts "#{s.name} saved"
 end
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'oils.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'oil.csv'))
 csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
   t = EssentialOil.new
