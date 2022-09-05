@@ -7,6 +7,7 @@ export default class extends Controller {
     apiKey: String,
     markers: Array
   }
+  import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 
   connect() {
     console.log(this.apiKeyValue)
@@ -20,6 +21,8 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl }))
   }
   // méthode privée
   // on itère pour chaque market (un objet map box)
@@ -42,7 +45,6 @@ export default class extends Controller {
         customMarker.style.backgroundSize = "contain"
         customMarker.style.width = "25px"
         customMarker.style.height = "25px"
-        console.log(marker.image_url)
 
       new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
