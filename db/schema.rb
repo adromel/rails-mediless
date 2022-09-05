@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_170254) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_05_131320) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_170254) do
     t.text "posology"
     t.index ["essential_oil_id", "symptom_id"], name: "oil_symptom_index"
     t.index ["symptom_id", "essential_oil_id"], name: "symptom_oil_index"
+  end
+
+  create_table "specialists", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "symptoms", force: :cascade do |t|

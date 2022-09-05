@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   get "/test", to: "pages#test"
   get "threejs", to: "pages#threejs"
 
+  resources :specialists
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

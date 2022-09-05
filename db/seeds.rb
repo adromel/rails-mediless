@@ -7,6 +7,13 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'csv'
 
+Symptom.destroy_all
+EssentialOil.destroy_all
+User.destroy_all
+OilTreatment.destroy_all
+Acupoint.destroy_all
+AcupointTreatment.destroy_all
+Specialist.destroy_all
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'symptoms.csv'))
 csv = CSV.parse(csv_text, :headers => true)
@@ -68,3 +75,5 @@ csv.each do |row|
   at.save
   puts "#{at.acupoint_id} saved"
 end
+
+wagon = Specialist.create!(name: "Le Wagon Lyon", address: "20 rue des Capucins Lyon")
