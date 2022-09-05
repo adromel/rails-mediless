@@ -1,6 +1,6 @@
 
 <ul class="nav" data-controller="navbar">
-  <span class="nav-indicator" data-navbar-target="indicator"></span>
+  <%# <span class="nav-indicator" data-navbar-target="indicator"></span> %>
   <li>
     <%= link_to root_path, data: { action: "click->navbar#update", navbar_target: "list"}, class: "nav-item" do %>
       <i class="fa-solid fa-house "></i>
