@@ -1,0 +1,15 @@
+<% @list_elements.each do |o| %>
+    <div class="content-saved" data-controller="posology">
+      <% if o.listable.photo.present? %>
+        <img src="<%= o.listable.photo %>" id="image-saved" alt="">
+      <% end %>
+      <div class="content-saved-text set-posology" data-posology-target="text">
+        <h1><%= link_to o.listable.name, polymorphic_url(o.listable) %></h1>
+        <% if o.listable.description.present? %>
+          <p><%= o.listable.description %></p>
+        <% end %>
+        <a href="" data-action="click->posology#toggle"
+        data-posology-target="link">Voir plus</a>
+      </div>
+    </div>
+  <% end %>

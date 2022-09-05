@@ -10,10 +10,13 @@ class ListElementsController < ApplicationController
   # récupérer les attributs pour type
   # récupérer le reste pour chaque type
 
+  def show
+    @list_element = ListElement.find_by(listable: @essential_oil, user: current_user)
+    @essential_oil = EssentialOil.find(params[:id])
+  end
+
   def index
-    @list_elements = ListElement.all
-    @essential_oil = EssentialOil.find(params[:essential_oil_id])
-    @acupoint = Acupoint.find(params[:acupoint_id])
+    @list_elements = current_user.list_elements
   end
 
   def create
