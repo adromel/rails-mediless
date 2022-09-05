@@ -13,7 +13,7 @@
     <%= @essential_oil.description %>
     <div class="button-small mx-1">
       <% if @list_element.present? %>
-        <%= link_to "Restaurer", list_element_path(@list_element), data: {turbo_method: :delete, turbo_confirm: "es-tu sûr de vouloir supprimer cette huile de ta liste ?"} %>
+        <%= link_to "Restaurer", list_element_path(@list_element), data: {turbo_method: :delete, turbo_confirm: "es-tu sûr de vouloir supprimer cette huile sauvegardée de ta liste ?"} %>
       <% else %>
         <%= link_to "Enregistrer", essential_oil_list_elements_path(@essential_oil), data: {turbo_method: :post} %>
       <% end %>

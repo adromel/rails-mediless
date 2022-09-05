@@ -10,8 +10,13 @@ class ListElementsController < ApplicationController
   # récupérer les attributs pour type
   # récupérer le reste pour chaque type
 
+  def show
+    @list_element = ListElement.find_by(listable: @essential_oil, user: current_user)
+    @essential_oil = EssentialOil.find(params[:id])
+  end
+
   def index
-    # @list_element = ListElement.all
+    @list_elements = current_user.list_elements
   end
 
   def create
@@ -27,7 +32,7 @@ class ListElementsController < ApplicationController
     elsif params[:acupoint_id].present?
       @acupoint = Acupoint.find(params[:acupoint_id])
       @listable_acupoint = ListElement.create(user: current_user, listable: @acupoint)
-      redirect_to acupoint_path(@acupoint)
+      redirect_to acupoints_symptom_path(id: params[:symptom_id]), notice: "Sauvegardé"
     end
   end
 
@@ -40,4 +45,5 @@ class ListElementsController < ApplicationController
     @list_element.destroy
     redirect_to @list_element.listable, notice: "élément non sauvegardé"
   end
+
 end
