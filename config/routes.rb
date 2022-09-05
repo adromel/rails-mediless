@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   end
 
   # get '/symptoms/:id', to: 'symptoms#show'
-  resources :list_elements, only: :destroy
+  resources :list_elements, only: %i[destroy]
 
   get "/test", to: "pages#test"
   get "threejs", to: "pages#threejs"

@@ -11,7 +11,9 @@ class ListElementsController < ApplicationController
   # récupérer le reste pour chaque type
 
   def index
-    # @list_element = ListElement.all
+    @list_elements = ListElement.all
+    @essential_oil = EssentialOil.find(params[:essential_oil_id])
+    @acupoint = Acupoint.find(params[:acupoint_id])
   end
 
   def create
@@ -40,4 +42,5 @@ class ListElementsController < ApplicationController
     @list_element.destroy
     redirect_to @list_element.listable, notice: "élément non sauvegardé"
   end
+
 end
