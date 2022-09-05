@@ -1,15 +1,17 @@
-<% @list_elements.each do |o| %>
+<% @list_elements.each do |list_element| %>
+  <% if list_element.listable.kind_of?(Acupoint) %>
+    <h1><%= link_to list_element.listable.name, polymorphic_url(list_element.listable) %></h1>
+    <p><%= list_element.listable.coordinates %></p>
+
+  <% elsif list_element.listable.kind_of?(EssentialOil) %>
     <div class="content-saved" data-controller="posology">
-      <% if o.listable.photo.present? %>
-        <img src="<%= o.listable.photo %>" id="image-saved" alt="">
-      <% end %>
+      <img src="<%= list_element.listable.photo %>" id="image-saved" alt="">
       <div class="content-saved-text set-posology" data-posology-target="text">
-        <h1><%= link_to o.listable.name, polymorphic_url(o.listable) %></h1>
-        <% if o.listable.description.present? %>
-          <p><%= o.listable.description %></p>
-        <% end %>
+        <h1><%= link_to list_element.listable.name, polymorphic_url(list_element.listable) %></h1>
+        <p><%= list_element.listable.description %></p>
         <a href="" data-action="click->posology#toggle"
         data-posology-target="link">Voir plus</a>
       </div>
     </div>
   <% end %>
+<% end %>
