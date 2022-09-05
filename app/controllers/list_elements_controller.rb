@@ -32,7 +32,7 @@ class ListElementsController < ApplicationController
     elsif params[:acupoint_id].present?
       @acupoint = Acupoint.find(params[:acupoint_id])
       @listable_acupoint = ListElement.create(user: current_user, listable: @acupoint)
-      redirect_to acupoint_path(@acupoint)
+      redirect_to acupoints_symptom_path(id: params[:symptom_id]), notice: "Sauvegardé"
     end
   end
 
