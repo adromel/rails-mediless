@@ -1,7 +1,9 @@
 <div class="search-list">
   <ul>
     <% @symptoms.each do |symptom| %>
-       <li><%= link_to symptom.name, symptom_path(symptom) %></li>
+       <%= link_to symptom_path(symptom) do %>
+        <li><%= symptom.name %></li>
+       <% end %>
     <% end %>
   </ul>
 </div>
