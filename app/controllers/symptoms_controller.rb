@@ -1,6 +1,6 @@
 class SymptomsController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_symptom, only: %i[ show acupoints ]
+  before_action :set_symptom, only: %i[show acupoints]
 
   def index
     @symptoms = Symptom.all
