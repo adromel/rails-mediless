@@ -24,7 +24,7 @@
       <img src="<%= o.essential_oil.photo %>" id="image-saved" alt="">
       <div class="content-saved-text set-posology" data-posology-target="text">
         <h1><%= link_to o.essential_oil.name, essential_oil_path %></h1>
-        <p><% strongify(o.posology).split(".").each do |p| %>
+        <p style="margin-top: 10px"><% strongify(o.posology).split(".").each do |p| %>
           <%= strongify(p)  %> <br><br>
         <% end %></p>
         <a href="" data-action="click->posology#toggle"
