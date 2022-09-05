@@ -1,7 +1,7 @@
 <ul class="nav" data-controller="navbar">
   <span class="nav-indicator" data-navbar-target="indicator"></span>
   <li>
-    <%= link_to test_path,
+    <%= link_to root_path,
     data: { action: "click->navbar#update", navbar_target: "list"}, class: "nav-item" do %>
       <i class="fa-solid fa-house "></i>
       <span class="title">Home</span>
@@ -15,7 +15,7 @@
     <% end %>
   </li>
   <li>
-    <%= link_to test_path,
+    <%= link_to root_path,
     data: { action: "click->navbar#update", navbar_target: "list" }, class: "nav-item" do %>
       <i class="fa-solid fa-magnifying-glass"></i>
       <span class="title">Search</span>
