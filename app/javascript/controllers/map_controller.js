@@ -20,26 +20,34 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-    console.log('Hello controller map box')
   }
   // méthode privée
   // on itère pour chaque market (un objet map box)
   // on récupère les markers.to_json de la view
   // voici les coordonées
   // et ajoute le à la map (= à la variable this.map )
-  #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window) // Add this
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup) // Add this
-        .addTo(this.map)
-    });
-  }
 
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  }
+  #addMarkersToMap() {
+    this.markersValue.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window) // Add this
+        // Create a HTML element for your custom marker
+        const customMarker = document.createElement("div")
+        customMarker.className = "marker"
+        customMarker.style.backgroundImage = `url('${marker.image_url}')`
+        customMarker.style.backgroundSize = "contain"
+        customMarker.style.width = "25px"
+        customMarker.style.height = "25px"
+        console.log(marker.image_url)
+
+      new mapboxgl.Marker(customMarker)
+        .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup) // Add this
+        .addTo(this.map)
+    });
   }
 }

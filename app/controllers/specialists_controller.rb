@@ -7,7 +7,8 @@ class SpecialistsController < ApplicationController
       {
         lat: specialist.latitude,
         lng: specialist.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {specialist: specialist})
+        info_window: render_to_string(partial: "info_window", locals: {specialist: specialist}),
+        image_url: helpers.asset_url("logo_wagon.png")
       }
     end
   end
