@@ -19,7 +19,11 @@
           data-posology-target="link">Voir plus</a>
         </div>
           <div class="button-large" id="margin-b">
-            <a href="#">Enregistrer ce point</a>
+            <% if @list_element.present? %>
+              <%= link_to "Restaurer", list_element_path(@list_element), data: {turbo_method: :delete, turbo_confirm: "es-tu sûr de vouloir supprimer cette ce point sauvegardé de ta liste ?"} %>
+            <% else %>
+              <%= link_to "Enregistrer", acupoint_list_elements_path(@acupoint), data: {turbo_method: :post} %>
+            <% end %>
           </div>
       <% end %>
     </div>
