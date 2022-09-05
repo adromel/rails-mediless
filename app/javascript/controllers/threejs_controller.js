@@ -6,27 +6,30 @@ import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 
 // Connects to data-controller="threejs"
 export default class extends Controller {
+  static values = {scenePath: String}
+
   connect() {
     console.log("Threejs controller connected")
 
     const loader = new GLTFLoader();
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0xff0000 );
-    const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1000 );
-    const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
+    scene.background = new THREE.Color( 0xd0f5ee );
+    const camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
+    const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 2);
     // controls.addEventListener('change', renderer);
 
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setSize( window.innerWidth, window.innerHeight );
     this.element.appendChild( renderer.domElement );
     let controls = new OrbitControls(camera, renderer.domElement);
 
-    loader.load( 'hand_fingers_semi_extended.glb', function ( gltf ) {
-      let moto = gltf.scene;  // moto 3D object is loaded
-      moto.scale.set(200, 200, 200);
-      camera.position.set(0, 0, 500);
+    loader.load( this.scenePathValue, function ( gltf ) {
+      let body = gltf.scene;  // body 3D object is loaded
+      body.scale.set(1, 1, 1);
+      body.position.y = -1;
+      camera.position.z = 3;
       controls.update();
-      scene.add(moto);
+      scene.add(body);
       scene.add(light);
       console.log(controls);
       renderer.render( scene, camera );

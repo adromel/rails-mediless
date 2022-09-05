@@ -1,11 +1,9 @@
 class EssentialOilsController < ApplicationController
-  before_action :authenticate_user!, only: [:save]
+  before_action :authenticate_user!, only: [:show]
 
   def show
     @essential_oil = EssentialOil.find(params[:id])
-  end
-
-  def save
+    @list_element = ListElement.find_by(listable: @essential_oil, user: current_user)
   end
 
 end

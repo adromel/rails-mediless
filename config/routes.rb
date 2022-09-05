@@ -6,21 +6,32 @@ Rails.application.routes.draw do
   #vue de la recherche home
   get 'search', to: 'symptoms#search'
 
-
   # vue de la recherche symptoms
-  resources :symptoms do
-    resources :oil_treatments
-  end
+
   resources :essential_oils
 
   resources :symptoms do
-    resources :acupoint_treatments
+    resources :oil_treatments
   end
-  resources :acu_points
+  resources :essential_oils do
+    resources :list_elements, only: :create
+  end
 
-  resources :list_elements
+
+  resources :symptoms do
+    member do
+      get :acupoints
+    end
+    resources :acupoint_treatments
+    resources :oil_treatments
+  end
+  resources :acupoints do
+    resources :list_elements, only: :create
+  end
 
   # get '/symptoms/:id', to: 'symptoms#show'
+  resources :list_elements, only: :destroy
+
   get "/test", to: "pages#test"
   get "threejs", to: "pages#threejs"
 

@@ -3,6 +3,10 @@
   <head>
     <title>RailsMediless</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta
+     name='viewport'
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+    />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,7 +14,6 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
-
 
     <%= render "shared/flashes" %>
     <%= yield %>

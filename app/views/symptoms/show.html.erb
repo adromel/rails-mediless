@@ -1,15 +1,23 @@
 <div class="container">
   <div class="head-fixed">
+   <%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left fa-2x"></i>
+    <% end %>
     <h1><%= @symptom.name %></h1>
   </div>
-
-  <div class="acupoint">
-    <p>Nous avons trouvé <%= @acupointtreatments.count %> points d'acupression pour le symptôme : <%= @symptom.name %>. Clique pour visualiser la modélisation et les méthodes de pressions de ces points.</p>
-    <%= render 'shared/button_large' %>
-  </div>
+  <% if @symptom.acupoints.present? %>
+    <div class="acupoint">
+      <p>Nous avons trouvé <strong><%= @acupointtreatments.count %> point(s) d'acupression</strong> pour le symptôme : <strong><%= @symptom.name %></strong>. Clique pour visualiser la modélisation et les méthodes de pression de ces points.</p>
+      <%= render 'shared/button_large' %>
+    </div>
+  <% else %>
+    <div class="acupoint">
+      <p>Nous n'avons pas trouvé de points d'acupression pour ce symptom.</p>
+    </div>
+  <% end %>
   <div class="span-content">
     <span>Huiles essentielles</span>
-    <p>Nous avons trouvé <strong><%= @oiltreatements.count %></strong> pour les <strong><%= @symptom.name %></strong></p>
+    <p>Nous avons trouvé <strong><%= @oiltreatements.count %> huiles essentielle(s)</strong> pour les <strong><%= @symptom.name %></strong></p>
   </strong>
   <% @oiltreatements.each do |o| %>
     <div class="content-saved" data-controller="posology">
