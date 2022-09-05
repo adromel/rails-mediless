@@ -7,8 +7,8 @@
   </div>
   <div data-controller="threejs" data-threejs-scene-path-value="<%= asset_url('scene.gltf')%>"></div>
   <div class="card-acupoint-wt-frame show">
-    <div class="point-general-container general" data-controller="posology">
-      <% @acupoints.each_with_index do |acupoint, index| %>
+    <% @acupoints.each_with_index do |acupoint, index| %>
+      <div class="point-general-container general" data-controller="posology">
         <% list_element = acupoint.list_elements.find_by(user: current_user) %>
 
         <div class="card-acupoint set-posology" data-posology-target="text" id="margin-b">
@@ -27,8 +27,7 @@
               <%= link_to "Enregistrer", acupoint_list_elements_path(acupoint, symptom_id: @symptom.id), data: {turbo_method: :post} %>
             <% end %>
           </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
-  <%= render 'shared/navbar' %>
 </div>

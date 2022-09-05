@@ -54,8 +54,9 @@ csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
   a = Acupoint.new
   a.name = row['name']
+  a.coordinates = row['coordinates']
   a.save
-  puts "#{a.name} saved"
+  puts "#{a.coordinates} saved"
 end
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'acupointTreatment.csv'))

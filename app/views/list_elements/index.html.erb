@@ -1,6 +1,6 @@
 <% @list_elements.each do |list_element| %>
   <% if list_element.listable.kind_of?(Acupoint) %>
-    <h1><%= link_to list_element.listable.name, polymorphic_url(list_element.listable) %></h1>
+    <h1><%= link_to list_element.listable.name %></h1>
     <p><%= list_element.listable.coordinates %></p>
 
   <% elsif list_element.listable.kind_of?(EssentialOil) %>
