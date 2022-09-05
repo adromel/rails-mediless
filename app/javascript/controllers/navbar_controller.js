@@ -5,11 +5,11 @@ export default class extends Controller {
   static targets = ["list", "indicator"];
 
   connect() {
-    console.log("----->");
+    // console.log("----->");
   }
 
   update(event) {
-    console.log(event);
+    // console.log(event);
     for (list of this.listTargets) {
       list.classList.remove("active");
     }
