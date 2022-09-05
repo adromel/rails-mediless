@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   resources :symptoms do
     resources :oil_treatments
   end
+
   resources :essential_oils do
     resources :list_elements, only: :create
   end
-
 
   resources :symptoms do
     member do
@@ -25,12 +25,13 @@ Rails.application.routes.draw do
     resources :acupoint_treatments
     resources :oil_treatments
   end
+
   resources :acupoints do
     resources :list_elements, only: :create
   end
 
   # get '/symptoms/:id', to: 'symptoms#show'
-  resources :list_elements, only: :destroy
+  resources :list_elements, only: %i[destroy index]
 
   get "/test", to: "pages#test"
   get "threejs", to: "pages#threejs"
