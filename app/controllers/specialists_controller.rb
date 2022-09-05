@@ -6,10 +6,10 @@ class SpecialistsController < ApplicationController
     @markers = @specialists.geocoded.map do |specialist|
       {
         lat: specialist.latitude,
-        lng: specialist.longitude
+        lng: specialist.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {specialist: specialist})
       }
     end
-
   end
 
 end
