@@ -4,10 +4,18 @@
   z-index: 9999;
   position: fixed;
   left:50%;
-  width: 100px;
-  height: 200px;
-  background-color: aquamarine;
+  width: 80%;
+  height: 80%;
+  border-radius: 8px;
+  background-color: rgba(119, 118, 118, 0.8);
+
   .hidden {
     display: none;
+  }
+  
+  i{
+  position: absolute;
+  right: 10px;
+  top: 5px;
   }
 }
