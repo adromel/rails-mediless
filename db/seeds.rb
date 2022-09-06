@@ -83,7 +83,7 @@ csv.each do |row|
   sp.name = row['name']
   sp.address = row['address']
   sp.phone_number = row['phone_number']
-  sp.type = row['type']
+  sp.speciality = row['type']
   sp.save
   puts "#{sp.type} saved"
 end
