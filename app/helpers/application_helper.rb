@@ -11,7 +11,11 @@ module ApplicationHelper
       "ventre",
       "Répétez",
       "pouce",
-      "index"
+      "index",
+      "doigts",
+      "minutes",
+      "minute",
+      "Estragon"
     ]
 
     separate_word = description.split(" ")
