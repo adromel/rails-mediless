@@ -10,7 +10,7 @@
   </div>
   <div class="background-content center">
     <%= render 'shared/description' %>
-    <p style="margin-top: 10px"><% strongify(@essential_oil.description).split(".").each do |p| %>
+    <p><% strongify(@essential_oil.description).split(".").each do |p| %>
       <%= strongify(p)  %> <br><br>
     <% end %></p>
     <div class="button-small mx-1">
@@ -22,4 +22,5 @@
     </div>
   </div>
   <%= render 'shared/navbar' %>
+  <%= render "shared/btn_up" %>
 </div>
