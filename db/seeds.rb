@@ -83,10 +83,7 @@ csv.each do |row|
   sp.name = row['name']
   sp.address = row['address']
   sp.phone_number = row['phone_number']
-  sp.speciality = row['type']
+  sp.speciality = row['speciality']
   sp.save
-  puts "#{sp.type} saved"
+  puts "#{sp.speciality} saved"
 end
-
-wagon = Specialist.create!(name: "Le Wagon Lyon", address: "20 rue des Capucins Lyon")
-herboriste = Specialist.create!(name: "Herboristerie L'Aromathèque Jacobins", address: "9 rue de l'Ancienne Prefecture, 69002 Lyon")
