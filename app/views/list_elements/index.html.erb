@@ -13,6 +13,7 @@
               <span><%= index + 1 %></span>
             </div>
               <span>Point: <strong><%= link_to list_element.listable.name %></strong></span>
+              <span><%= display_acupoint_of(list_element) %></span>
               <p style="margin-top: 10px"><% strongify(list_element.listable.coordinates).split(".").each do |p| %>
                 <%= strongify(p)  %> <br><br>
               <% end %></p>

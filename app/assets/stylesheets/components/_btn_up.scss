@@ -1,0 +1,27 @@
+.btn-up {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  right: 20px;
+  bottom: 10px;
+  cursor: pointer;
+  background-color: #A4DABB;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  .fa-arrow-up {
+    margin: 0 auto;
+    color: white;
+    z-index: 10;
+    height: 100%;
+    padding-top: 15px;
+    // &:focus {
+    //   transition: 0.6s;
+    // }
+  }
+}
+
+#marge {
+  margin: 0 auto;
+  margin-top: 40px;
+}
