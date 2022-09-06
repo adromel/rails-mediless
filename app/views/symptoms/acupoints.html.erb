@@ -16,7 +16,10 @@
             <span><%= index + 1 %></span>
           </div>
           <span>Point: <strong><%= acupoint.name %></strong></span>
-          <p><%= acupoint.coordinates %></p>
+          <p style="margin-top: 10px"><% strongify(acupoint.coordinates).split(".").each do |p| %>
+            <%= strongify(p)  %> <br><br>
+          <% end %></p>
+
           <a href="" data-action="click->posology#toggle"
           data-posology-target="link">Voir plus</a>
         </div>
