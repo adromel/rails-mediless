@@ -3,7 +3,7 @@
     <%= link_to root_path do %>
       <i class="fa-solid fa-arrow-left fa-2x"></i>
     <% end %>
-    <h1>Mes favories</h1>
+    <h1>Mes favoris</h1>
   </div>
   <% @list_elements.each_with_index do |list_element, index| %>
       <% if list_element.listable.kind_of?(Acupoint) %>
