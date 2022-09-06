@@ -1,10 +1,13 @@
-.modal {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    .container {
-      background-color: white;
-      width: 95%;
-      max-height: screen;
-    }
+.modale {
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 9999;
+  position: fixed;
+  left:50%;
+  width: 100px;
+  height: 200px;
+  background-color: aquamarine;
+  .hidden {
+    display: none;
   }
+}

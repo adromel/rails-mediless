@@ -8,14 +8,12 @@ export default class extends Controller {
     // Enlever le hidden du container
     console.log('je suis dans open')
     this.containerTarget.classList.remove("hidden")
-    this.containerTarget.classList.add("active")
-
-
-
   }
 
   close() {
     // ajoute le hidden au container
+    this.containerTarget.classList.add("hidden")
+    
   }
 
   connect() {

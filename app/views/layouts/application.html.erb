@@ -17,9 +17,16 @@
 
   </head>
   <body>
+  <div class="container" data-controller="modal" >
+    <div class="hidden modale" data-modal-target="container">
+        <h2>Hello je suis dans le container</h2>
+        <%= render "shared/form_input" %>
+    </div>
+
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
+  </div>
 
   </body>
 </html>
