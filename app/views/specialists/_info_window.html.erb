@@ -1,2 +1,5 @@
 <h2><%= specialist.name %></h2>
-<p><%= specialist.address %></p>
+<p>Addresse : <% specialist.address.split(",") do |p| %>
+                <%= p %></p><br>
+              <% end %>
+<p>Tél : <%= specialist.phone_number %></p>
