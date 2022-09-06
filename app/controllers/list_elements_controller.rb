@@ -25,9 +25,9 @@ class ListElementsController < ApplicationController
       @essential_oil = EssentialOil.find(params[:essential_oil_id])
       @listable_essential_oil = ListElement.create(user: current_user, listable: @essential_oil)
       if @listable_essential_oil.save
-        redirect_to @essential_oil, notice: "élement sauvegardé"
+        redirect_to @essential_oil, notice: "élément sauvegardé"
       else
-        redirect_to essential_oil_path(@essential_oil), notice: "Sauvegarder échouée"
+        redirect_to essential_oil_path(@essential_oil), notice: "Sauvegarde échouée"
       end
     elsif params[:acupoint_id].present?
       @acupoint = Acupoint.find(params[:acupoint_id])
