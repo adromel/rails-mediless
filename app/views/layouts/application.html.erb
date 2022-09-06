@@ -17,9 +17,17 @@
 
   </head>
   <body>
+  <div class="container" data-controller="modal" >
+    <div class="hidden modale" data-modal-target="opener closer">
+    <i class="fa-solid fa-xmark" data-action="click->modal#close"></i>
+        <h2>Entre un symptôme</h2>
+        <%= render "shared/form_input" %>
+    </div>
+
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
+  </div>
 
   </body>
 </html>

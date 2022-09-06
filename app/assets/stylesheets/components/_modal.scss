@@ -1,10 +1,21 @@
-.modal {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    .container {
-      background-color: white;
-      width: 95%;
-      max-height: screen;
-    }
+.modale {
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 9999;
+  position: fixed;
+  left:50%;
+  width: 80%;
+  height: 80%;
+  border-radius: 8px;
+  background-color: rgba(119, 118, 118, 0.8);
+
+  .hidden {
+    display: none;
   }
+  
+  i{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  }
+}
