@@ -1,15 +1,29 @@
-<div class="container">
-  <%= render "shared/logo_mediless" %>
-
-  <div class="background">
+<div class="container" id="margin-top">
+  <div class="background w-100">
     <div class="background-content">
-      <%= render "shared/description" %>
-      <%= render "shared/form_input" %>
+      <div class="circle" id="reload">
+        <i class="fa-solid fa-leaf fa-5x"></i>
+        <span class="name">Mediless</span>
+      </div>
+      <div class="p-2 ">
+        <%= render "shared/description" %>
+        <%= render "shared/form_input" %>
+      </div>
     </div>
   </div>
-  <h1>Tu trouveras ici</h1>
+  <h1 id="size">Tu trouveras ici</h1>
   <%= render "shared/card_home" %>
   <%= render "shared/card_home1" %>
   <%= render "shared/card_home2" %>
   <%= render "shared/navbar" %>
+
+  <script>window.onscroll = function () {
+    scrollRotate();
+  };
+
+  function scrollRotate() {
+      let image = document.getElementById("reload");
+      image.style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
+  }
+  </script>
 </div>

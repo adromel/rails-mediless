@@ -1,26 +1,17 @@
 .description {
-  background-color: #80CCA0;
+  // background-color: #80CCA0;
   border-radius: 8px;
-  padding: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  row-gap: 10px;
-  text-align: left;
-}
-
-.description p {
-  object-fit: fill;
-  margin: 0;
-  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .description h3 {
   object-fit: fill;
   margin: 0;
-  color: white;
+  color: black;
+  font-size: 1.7rem;
+  white-space: nowrap;
+
 }
 
 .icon-add {

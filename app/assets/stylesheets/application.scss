@@ -26,8 +26,13 @@
   // background-color: gray;
 }
 
+#margin-top {
+  padding-top: 10px;
+}
+
 body {
   background-color: white;
+  scroll-behavior: smooth;
 }
 
 body p {
