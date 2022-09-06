@@ -1,0 +1,17 @@
+.mapboxgl-map{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mapboxgl-popup-content {
+  border-radius: 20px;
+}
+
+.mapboxgl-ctrl-top-right {
+  border-radius: 20px;
+}
+
+.mapboxgl-canvas {
+  border-radius: 20px;
+}

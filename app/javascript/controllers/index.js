@@ -2,22 +2,25 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application"
+import { application } from "./application";
 
-import AddressAutocompleteController from "./address_autocomplete_controller"
-application.register("address-autocomplete", AddressAutocompleteController)
+import AddressAutocompleteController from "./address_autocomplete_controller";
+application.register("address-autocomplete", AddressAutocompleteController);
 
-import ButtonUpController from "./button_up_controller"
-application.register("button-up", ButtonUpController)
+import ButtonUpController from "./button_up_controller";
+application.register("button-up", ButtonUpController);
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import HelloController from "./hello_controller";
+application.register("hello", HelloController);
 
-import MapController from "./map_controller"
-application.register("map", MapController)
+import MapController from "./map_controller";
+application.register("map", MapController);
 
-import NavbarController from "./navbar_controller"
-application.register("navbar", NavbarController)
+import NavbarController from "./navbar_controller";
+application.register("navbar", NavbarController);
+
+import PosologyController from "./posology_controller";
+application.register("posology", PosologyController);
 
 import Modal from "./modal_controller"
 application.register("modal", Modal)
@@ -25,8 +28,8 @@ application.register("modal", Modal)
 import PosologyController from "./posology_controller"
 application.register("posology", PosologyController)
 
-import SearchInputController from "./search_input_controller"
-application.register("search-input", SearchInputController)
+import SearchInputController from "./search_input_controller";
+application.register("search-input", SearchInputController);
 
-import ThreejsController from "./threejs_controller"
-application.register("threejs", ThreejsController)
+import ThreejsController from "./threejs_controller";
+application.register("threejs", ThreejsController);
