@@ -19,6 +19,9 @@ application.register("map", MapController)
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
 
+import Modal from "./modal_controller"
+application.register("modal", Modal)
+
 import PosologyController from "./posology_controller"
 application.register("posology", PosologyController)
 
