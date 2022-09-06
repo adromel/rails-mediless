@@ -1,6 +1,6 @@
 <div class="container">
   <div class="head-fixed">
-   <%= link_to root_path do %>
+    <%= link_to root_path do %>
       <i class="fa-solid fa-arrow-left fa-2x"></i>
     <% end %>
      <h1><%= @symptom.name %></h1>
@@ -16,7 +16,9 @@
             <span><%= index + 1 %></span>
           </div>
           <span>Point: <strong><%= acupoint.name %></strong></span>
-          <p><%= acupoint.coordinates %></p>
+          <p style="margin-top: 10px"><% strongify(acupoint.coordinates).split(".").each do |p| %>
+            <%= strongify(p)  %> <br><br>
+          <% end %></p>
           <a href="" data-action="click->posology#toggle"
           data-posology-target="link">Voir plus</a>
         </div>
