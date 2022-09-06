@@ -1,19 +1,56 @@
-
 <ul class="nav" data-controller="navbar">
   <%# <span class="nav-indicator" data-navbar-target="indicator"></span> %>
-  <li>
-    <%= link_to root_path, data: { action: "click->navbar#update", navbar_target: "list"}, class: "nav-item" do %>
-      <i class="fa-solid fa-house "></i>
-      <span class="title">Home</span>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to list_elements_path, data: { action: "change->navbar#update", navbar_target: "list"}, class: class_names("nav-item", { active: params[:controller] == "list_elements" && params[:action] == "index" }) do %>
-      <i class="fa-regular fa-bookmark "></i>
-      <span class="title">Favoris</span>
-    <% end %>
-  </li>
 
+
+      <i class="uil uil-times nav-close-btn"></i>
+        <li>
+          <%= link_to root_path, data: { action: "click->navbar#update", navbar_target: "list"}, class: "nav-item" do %>
+            <i class="fa-solid fa-house "></i>
+            <span class="title">Home</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to list_elements_path, data: { action: "change->navbar#update", navbar_target: "list"}, class: class_names("nav-item", { active: params[:controller] == "list_elements" && params[:action] == "index" }) do %>
+            <i class="fa-regular fa-bookmark "></i>
+            <span class="title">Favoris</span>
+          <% end %>
+        </li>
+
+        <li data-controller="modal">
+          <div class="" data-action="click->modal#open">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="title">Search</span>
+          </div>
+
+          <!-- container -->
+          <div class="hidden modal container" data-modal-target="container">
+            <h2>Hello je suis dans le container</h2>
+            <%= render "shared/form_input" %>
+          </div>
+        </li>
+        <li>
+          <%= link_to specialists_path, data: { action: "change->navbar#update", navbar_target: "list" }, class: "nav-item" do %>
+            <i class="fa-solid fa-location-dot "></i>
+            <span class="title">Map</span>
+          <% end %>
+        </li>
+        <li>
+        <div class="dropdown">
+          <button class="btn btn-drop dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <%= link_to test_path, data: { action: "change->navbar#update", navbar_target: "list" }, class: class_names("nav-item", { active: params[:controller] == "Users" && params[:action] == "show" }) do %>
+            <i class="fa-solid fa-user "></i>
+            <span class="title">Profile</span>
+          <% end %>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <% if user_signed_in?%>
+              <li><%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item", style: "color: black" %></li>
+            <% else %>
+              <li><%= link_to "Connexion", new_user_session_path, class: "dropdown-item", style: "color: black" %></li>
+            <% end %>
+          </ul>
+        </li>
+        </div>
 
   <li>
     <div class="" data-action="click->modal#open">
@@ -43,6 +80,11 @@
         <li><%= link_to "Connexion", new_user_session_path, class: "dropdown-item", style: "color: black" %></li>
       <% end %>
     </ul>
+  <div class="scroll-indicator-container">
+    <div class="scroll-indicator-bar"></div>
   </div>
-  </li>
+  <i class="uil uil-apps nav-menu-btn"></i>
+  </div>
+  <i class="uil uil-apps nav-menu-btn"></i>
+
 </ul>
