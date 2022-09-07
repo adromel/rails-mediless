@@ -17,9 +17,11 @@
   // position: absolute;
   top: 0px;
   right: 0px;
+  z-index: 1000000;
 }
 
 .button-small {
+  z-index: 100000;
   padding: 12px 16px;
   background: #65C18C;
   width: 223px;
@@ -37,6 +39,7 @@
 
 
 .button-large {
+  z-index: 100000;
   padding: 12px 16px;
   background: #65C18C;
   width: 100%;
@@ -50,6 +53,7 @@
 
 .btn-a {
   text-decoration: none;
+  z-index: 100000;
   color: white;
   &:hover {
     color: white;
