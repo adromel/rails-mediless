@@ -19,7 +19,7 @@
               </div>
               <span>Point: <strong><%= acupoint.name %></strong></span>
 
-              <span data-action="click->threejs#focus" data-name="<%= acupoint.name %>">focus</span>
+              <span data-action="click->threejs#focus" data-name="<%= acupoint.name %>"><i class="fa-solid fa-eye"></i></span>
               <p style="margin-top: 10px"><% strongify(acupoint.coordinates).split(".").each do |p| %>
                 <%= strongify(p)  %> <br><br>
               <% end %></p>
