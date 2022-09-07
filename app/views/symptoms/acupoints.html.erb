@@ -1,36 +1,42 @@
-<div class="container">
-  <div class="head-fixed">
+<div class="container" data-controller="threejs" data-threejs-scene-path-value="<%= asset_url('scene.glb')%>">
+  <div id="top-anchor">
+    <div class="head-fixed">
     <%= link_to symptom_path do %>
-      <i class="fa-solid fa-arrow-left fa-2x"></i>
-    <% end %>
-     <h1><%= @symptom.name %></h1>
-  </div>
-  <div data-controller="threejs" data-threejs-scene-path-value="<%= asset_url('scene.gltf')%>"></div>
-  <div class="card-acupoint-wt-frame show">
-    <% @acupoints.each_with_index do |acupoint, index| %>
-      <div class="point-general-container general" data-controller="posology">
-        <% list_element = acupoint.list_elements.find_by(user: current_user) %>
+        <i class="fa-solid fa-arrow-left fa-2x"></i>
+      <% end %>
+      <h1><%= @symptom.name %></h1>
+    </div>
+    <div>
+      <div id="afficheur" style="width: 100%; height: 400px;"  data-threejs-target="container"></div>
+      <div class="card-acupoint-wt-frame show">
+        <% @acupoints.each_with_index do |acupoint, index| %>
+          <div class="point-general-container general" data-controller="posology">
+            <% list_element = acupoint.list_elements.find_by(user: current_user) %>
 
-        <div class="card-acupoint set-posology" data-posology-target="text" id="margin-b">
-          <div class="frame-content" id="frame-other">
-            <span><%= index + 1 %></span>
+            <div class="card-acupoint set-posology" data-posology-target="text" id="margin-b">
+              <div class="frame-content" id="frame-other">
+                <span><%= index + 1 %></span>
+              </div>
+              <span>Point: <strong><%= acupoint.name %></strong></span>
+
+              <span data-action="click->threejs#focus" data-name="<%= acupoint.name %>"><i class="fa-solid fa-eye"></i></span>
+              <p style="margin-top: 10px"><% strongify(acupoint.coordinates).split(".").each do |p| %>
+                <%= strongify(p)  %> <br><br>
+              <% end %></p>
+              <a href="" data-action="click->posology#toggle"
+              data-posology-target="link">Voir plus</a>
+            </div>
+              <div class="button-large" id="margin-b">
+                <% if list_element.present? %>
+                  <%= link_to "Restaurer", list_element_path(list_element), data: {turbo_method: :delete, turbo_confirm: "es-tu sûr de vouloir supprimer cette ce point sauvegardé de ta liste ?"} %>
+                <% else %>
+                  <%= link_to "Enregistrer", acupoint_list_elements_path(acupoint, symptom_id: @symptom.id), data: {turbo_method: :post} %>
+                <% end %>
+              </div>
           </div>
-          <span>Point: <strong><%= acupoint.name %></strong></span>
-          <p style="margin-top: 10px"><% strongify(acupoint.coordinates).split(".").each do |p| %>
-            <%= strongify(p)  %> <br><br>
-          <% end %></p>
-          <a href="" data-action="click->posology#toggle"
-          data-posology-target="link">Voir plus</a>
-        </div>
-          <div class="button-large" id="margin-b">
-            <% if list_element.present? %>
-              <%= link_to "Restaurer", list_element_path(list_element), data: {turbo_method: :delete, turbo_confirm: "es-tu sûr de vouloir supprimer cette ce point sauvegardé de ta liste ?"} %>
-            <% else %>
-              <%= link_to "Enregistrer", acupoint_list_elements_path(acupoint, symptom_id: @symptom.id), data: {turbo_method: :post} %>
-            <% end %>
-          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
   <%= render "shared/btn_up" %>
 </div>
