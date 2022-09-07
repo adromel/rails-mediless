@@ -46,13 +46,15 @@
 }
 .m-fadeOut {
   // visibility: hidden;
-  opacity: 0;
-  transition: visibility 300ms linear 300ms, opacity 300ms;
+  // opacity: 0;
+  // transition: visibility 300ms linear 300ms, opacity 300ms;
+  display: none;
 }
 .m-fadeIn {
+  display: block;
   // visibility: visible;
-  opacity: 1;
-  transition: visibility 3s linear 3s, opacity 3s;
+  // opacity: 1;
+  // transition: visibility 3s linear 3s, opacity 3s;
 }
 
 .format {
