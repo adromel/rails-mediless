@@ -25,8 +25,8 @@ application.register("navbar", NavbarController);
 import PosologyController from "./posology_controller";
 application.register("posology", PosologyController);
 
-import Modal from "./modal_controller"
-application.register("modal", Modal)
+// import Modal from "./modal_controller"
+// application.register("modal", Modal)
 
 
 

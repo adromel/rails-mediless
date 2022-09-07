@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta
      name='viewport'
-     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+    />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,20 +18,19 @@
   </head>
   <body>
 
-  #pop up quand click sur loupe
-  <div class="container" data-controller="modal" >
+
+  <div class="" data-controller="modal" >
     <div class="hidden modale" data-modal-target="opener closer">
-    <i class="fa-solid fa-xmark" data-action="click->modal#close"></i>
-        <h2>Entre un symptôme</h2>
-        <%= render "shared/form_input" %>
+      <i class="fa-solid fa-xmark" data-action="click->modal#close"></i>
+      <h2>Entre un symptôme</h2>
+      <%= render "shared/form_input" %>
     </div>
-
-
 
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
   </div>
+
 
   </body>
 </html>
