@@ -28,8 +28,6 @@ application.register("posology", PosologyController);
 import Modal from "./modal_controller"
 application.register("modal", Modal)
 
-import PosologyController from "./posology_controller"
-application.register("posology", PosologyController)
 
 
 import SearchInputController from "./search_input_controller";
