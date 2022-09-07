@@ -76,5 +76,14 @@ csv.each do |row|
   puts "#{at.acupoint_id} saved"
 end
 
-wagon = Specialist.create!(name: "Le Wagon Lyon", address: "20 rue des Capucins Lyon")
-herboriste = Specialist.create!(name: "Herboristerie L'Aromathèque Jacobins", address: "9 rue de l'Ancienne Prefecture, 69002 Lyon")
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'specialists.csv'))
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  sp = Specialist.new
+  sp.name = row['name']
+  sp.address = row['address']
+  sp.phone_number = row['phone_number']
+  sp.speciality = row['speciality']
+  sp.save
+  puts "#{sp.speciality} saved"
+end

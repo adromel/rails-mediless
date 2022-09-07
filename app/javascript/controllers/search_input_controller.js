@@ -12,7 +12,7 @@ export default class extends Controller {
       });
   }
   connect() {
-    // console.log("------>")
-    // console.log(this.inputTarget)
+    console.log("------>");
+    console.log(this.inputTarget);
   }
 }

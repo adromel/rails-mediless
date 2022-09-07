@@ -1,0 +1,47 @@
+.modale {
+  top: 45%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 9999;
+  position: fixed;
+  left:50%;
+  width: 91%;
+  height: auto;
+  border-radius: 8px;
+  background-color: #adadad;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  padding-bottom: 20px;
+  // text-align: center;
+
+  h2 {
+    margin-top: 163px;
+    margin-left: 33.3px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 80%;
+    border-radius: 10px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  i{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  }
+
+  #icon-popup {
+    color: white;
+    margin-right: 100px;
+    margin-top: 45px;
+  }
+
+}
+
+.format {
+  margin-top: 150px;
+}

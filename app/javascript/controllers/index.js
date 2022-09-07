@@ -4,17 +4,31 @@
 
 import { application } from "./application";
 
+import AddressAutocompleteController from "./address_autocomplete_controller";
+application.register("address-autocomplete", AddressAutocompleteController);
+
+import ButtonUpController from "./button_up_controller";
+application.register("button-up", ButtonUpController);
+
 import HelloController from "./hello_controller";
 application.register("hello", HelloController);
 
 import MapController from "./map_controller";
 application.register("map", MapController);
 
-import PosologyController from "./posology_controller";
-application.register("posology", PosologyController);
+import ModalController from "./modal_controller";
+application.register("modal", ModalController);
 
 import NavbarController from "./navbar_controller";
 application.register("navbar", NavbarController);
+
+import PosologyController from "./posology_controller";
+application.register("posology", PosologyController);
+
+// import Modal from "./modal_controller"
+// application.register("modal", Modal)
+
+
 
 import SearchInputController from "./search_input_controller";
 application.register("search-input", SearchInputController);

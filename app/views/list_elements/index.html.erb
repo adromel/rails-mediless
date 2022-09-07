@@ -1,9 +1,9 @@
- <div class="container">
+ <div class="container" data-modal-target="container" data-action="click->modal#close">
    <div class="head-fixed">
     <%= link_to root_path do %>
       <i class="fa-solid fa-arrow-left fa-2x"></i>
     <% end %>
-    <h1>Mes favories</h1>
+    <h1>Mes favoris</h1>
   </div>
   <% @list_elements.each_with_index do |list_element, index| %>
       <% if list_element.listable.kind_of?(Acupoint) %>
@@ -13,6 +13,7 @@
               <span><%= index + 1 %></span>
             </div>
               <span>Point: <strong><%= link_to list_element.listable.name %></strong></span>
+              <span><%= display_acupoint_of(list_element) %></span>
               <p style="margin-top: 10px"><% strongify(list_element.listable.coordinates).split(".").each do |p| %>
                 <%= strongify(p)  %> <br><br>
               <% end %></p>

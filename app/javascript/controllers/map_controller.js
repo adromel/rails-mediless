@@ -1,15 +1,16 @@
 import { Controller } from "@hotwired/stimulus";
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 
 // déclarer une classe de controller stimulus qui hérite Controller (behaviours de stimulus)
 export default class extends Controller {
   static values = {
     apiKey: String,
 
-    markers: Array
-  }
+    markers: Array,
+  };
 
   connect() {
-    console.log(this.apiKeyValue);
+    // console.log(this.apiKeyValue);
     mapboxgl.accessToken = this.apiKeyValue;
     // on appelle mapx box avec l'access token
     // on crée une nouvelle instance de map
@@ -17,10 +18,17 @@ export default class extends Controller {
     this.map = new mapboxgl.Map({
       container: this.element,
 
-      style: "mapbox://styles/mapbox/streets-v10"
-    })
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+      style: "mapbox://styles/mapbox/streets-v10",
+    });
+    this.addMarkersToMap();
+    this.fitMapToMarkers();
+
+    this.map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+      })
+    );
   }
   // méthode privée
   // on itère pour chaque market (un objet map box)
@@ -28,16 +36,19 @@ export default class extends Controller {
   // voici les coordonées
   // et ajoute le à la map (= à la variable this.map )
 
-  #fitMapToMarkers() {
+  fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds();
     this.markersValue.forEach((marker) =>
       bounds.extend([marker.lng, marker.lat])
     );
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+    this.map.fitBounds(bounds, {
+      padding: 70,
+      maxZoom: 15,
+      duration: 0,
+    });
   }
-  #addMarkersToMap() {
+  addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-
       const popup = new mapboxgl.Popup().setHTML(marker.info_window); // Add this
       // Create a HTML element for your custom marker
       const customMarker = document.createElement("div");
@@ -46,8 +57,7 @@ export default class extends Controller {
       customMarker.style.backgroundSize = "contain";
       customMarker.style.width = "25px";
       customMarker.style.height = "25px";
-      console.log(marker.image_url);
-
+      // console.log(marker.image_url);
 
       new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])

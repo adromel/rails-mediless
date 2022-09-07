@@ -16,10 +16,19 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
 
   </head>
-  <body>
+  <body data-controller="modal">
+
+    <div class="hidden modale" data-modal-target="modal">
+      <i class="fa-solid fa-xmark" data-action="click->modal#open"></i>
+      <h2>Entre un symptôme</h2>
+      <%= render "shared/form_input" %>
+      <i class="fa-solid fa-leaf fa-5x" id="icon-popup"></i>
+    </div>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
+  </div>
+
 
   </body>
 </html>

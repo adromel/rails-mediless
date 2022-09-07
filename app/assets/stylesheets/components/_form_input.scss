@@ -2,25 +2,24 @@
   // position: relative;
   border-radius: 8px;
   background-color: white;
-  padding: 0;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0 auto;
+  max-width: 90%;
+  width: 100%;
 }
 
+
 #name {
-  padding-left: 15px;
-  height: 49px;
-  width: 100%;
+  padding: 10px 5px;
   margin: 0 auto;
   font-size: 0.875rem;
   border-radius: 8px;
-  background-color: transparent;
-  width: 100%;
+  background-color: white;
   border: none;
   color: black;
   font-weight: 200;
   outline: none;
   text-align: left;
+  width: 100%;
 }
 
 ul {
@@ -29,7 +28,9 @@ ul {
 }
 
 .search-list {
-
+  padding: 5px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 0px 0px 20px 20px;
   a {
     text-decoration: none;
     color: black;
@@ -39,12 +40,10 @@ ul {
       padding-bottom: 7px;
       list-style-type: none;
       margin-top: 20px;
+      font-size: 0.8rem;
     }
   }
 }
-
-
-
 
 .link-symptom {
   text-decoration: none;

@@ -20,7 +20,9 @@
               <span>Point: <strong><%= acupoint.name %></strong></span>
 
               <span data-action="click->threejs#focus" data-name="<%= acupoint.name %>">focus</span>
-              <p><%= acupoint.coordinates %></p>
+              <p style="margin-top: 10px"><% strongify(acupoint.coordinates).split(".").each do |p| %>
+                <%= strongify(p)  %> <br><br>
+              <% end %></p>
               <a href="" data-action="click->posology#toggle"
               data-posology-target="link">Voir plus</a>
             </div>
@@ -34,7 +36,7 @@
           </div>
         <% end %>
       </div>
-
     </div>
   </div>
+  <%= render "shared/btn_up" %>
 </div>

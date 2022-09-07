@@ -8,7 +8,14 @@ module ApplicationHelper
       "essentielles",
       "naturelle",
       "naturel",
-      "ventre"
+      "ventre",
+      "Répétez",
+      "pouce",
+      "index",
+      "doigts",
+      "minutes",
+      "minute",
+      "Estragon"
     ]
 
     separate_word = description.split(" ")

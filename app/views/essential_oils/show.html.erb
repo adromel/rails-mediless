@@ -10,7 +10,9 @@
   </div>
   <div class="background-content center">
     <%= render 'shared/description' %>
-    <%= @essential_oil.description %>
+    <p><% strongify(@essential_oil.description).split(".").each do |p| %>
+      <%= strongify(p)  %> <br><br>
+    <% end %></p>
     <div class="button-small mx-1">
       <% if @list_element.present? %>
         <%= link_to "Restaurer", list_element_path(@list_element), data: {turbo_method: :delete, turbo_confirm: "es-tu sûr de vouloir supprimer cette huile sauvegardée de ta liste ?"} %>
@@ -19,5 +21,5 @@
       <% end %>
     </div>
   </div>
-  <%= render 'shared/navbar' %>
+  <%= render "shared/btn_up" %>
 </div>

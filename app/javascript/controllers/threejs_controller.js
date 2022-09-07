@@ -52,7 +52,7 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log("Threejs controller connected")
+    // console.log("Threejs controller connected")
 
 
     // Scene
