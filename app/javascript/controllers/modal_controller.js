@@ -4,15 +4,15 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["opener", "closer"];
 
+  connect() {
+    console.log("Toto");
+  }
+
   open() {
     this.openerTarget.classList.remove("hidden")
   }
 
   close() {
     this.closerTarget.classList.add("hidden")
-  }
-
-  connect() {
-
   }
 }
