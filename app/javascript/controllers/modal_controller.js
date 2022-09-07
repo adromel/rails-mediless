@@ -7,12 +7,14 @@ export default class extends Controller {
   connect() {}
 
   open() {
-    this.modalTarget.classList.remove("hidden");
+    this.modalTarget.classList.remove("m-fadeOut");
+    this.containerTarget.classList.add("m-fadeIn");
     this.containerTarget.classList.add("filter");
   }
 
   close() {
     this.containerTarget.classList.remove("filter");
-    this.modalTarget.classList.add("hidden");
+    this.containerTarget.classList.remove("m-fadeIn");
+    this.modalTarget.classList.add("m-fadeOut");
   }
 }

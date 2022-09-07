@@ -12,7 +12,9 @@
   flex-direction: column;
   row-gap: 30px;
   padding-bottom: 20px;
+  // transition-duration: 3s ease;
   // text-align: center;
+
 
   h2 {
     margin-top: 163px;
@@ -24,22 +26,33 @@
     border-radius: 10px;
   }
 
-  .hidden {
-    display: none;
-  }
+  // .hidden {
+  //   display: none;
+  // }
+
 
   i{
   position: absolute;
   right: 10px;
   top: 5px;
-  }
+}
 
-  #icon-popup {
-    color: white;
-    margin-right: 100px;
-    margin-top: 45px;
-  }
+#icon-popup {
+  color: white;
+  margin-right: 100px;
+  margin-top: 45px;
+}
 
+}
+.m-fadeOut {
+  // visibility: hidden;
+  opacity: 0;
+  transition: visibility 300ms linear 300ms, opacity 300ms;
+}
+.m-fadeIn {
+  // visibility: visible;
+  opacity: 1;
+  transition: visibility 3s linear 3s, opacity 3s;
 }
 
 .format {

@@ -19,8 +19,8 @@
   </head>
   <body data-controller="modal">
 
-    <div class="hidden modale" data-modal-target="modal">
-      <i class="fa-solid fa-xmark" data-action="click->modal#open"></i>
+    <div class="m-fadeOut modale" data-modal-target="modal">
+      <i class="fa-solid fa-xmark" data-action="click->modal#close"></i>
       <h2>Entre un symptôme</h2>
       <%= render "shared/form_input" %>
       <i class="fa-solid fa-leaf fa-5x" id="icon-popup"></i>
