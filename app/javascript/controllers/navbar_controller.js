@@ -5,7 +5,8 @@ export default class extends Controller {
   static targets = ["list", "indicator"];
 
   connect() {
-    // console.log("----->");
+    console.log("----->");
+    console.log(this.listTarget.value);
   }
 
   update(event) {

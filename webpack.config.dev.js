@@ -2,8 +2,8 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  mode: "production",
-  devtool: "source-map",
+  mode: "development",
+  devtool: "eval",
   entry: {
     application: "./app/javascript/application.js",
   },
