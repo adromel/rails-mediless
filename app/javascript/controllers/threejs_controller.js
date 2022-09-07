@@ -14,11 +14,11 @@ export default class extends Controller {
   pointsCoordinates = {
     "TB23": {x: 0.065, y: 0.85, z: 0.12},
     "20GI": {x: 0.023, y: 0.797, z: 0.15},
-    "4GI": {x: 0, y: 0, z: 0},
+    "4GI": {x: -0.538, y: 0.021, z: 0.095},
     "27R": {x: 0, y: 0, z: 0},
     "7P": {x: 0, y: 0, z: 0},
-    "6Rt": {x: 0, y: 0, z: 0},
-    "3F": {x: 0, y: 0, z: 0},
+    "6Rt": {x: -0.179, y: -0.83, z: -0.033},
+    "3F": {x: -0.215, y: -0.93, z: 0.037},
     "Le point Tian Inférieur": {x: 0, y: 0, z: 0},
     "5C": {x: 0, y: 0, z: 0},
     "5PC": {x: 0, y: 0, z: 0},
@@ -110,6 +110,7 @@ export default class extends Controller {
 
     //ORBITCHANGETARGET
     focus(event) {
+      window.scrollTo(0, 0)
       const name = event.currentTarget.dataset.name
       this.controls.target = this.points[name].position
     };
