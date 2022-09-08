@@ -74,6 +74,7 @@ export default class extends Controller {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.maxDistance = 3;
     this.controls.minDistance = 0.2;
+    this.controls.touches.TWO = THREE.TOUCH.DOLLY;
 
     //SPHERE
 
