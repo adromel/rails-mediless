@@ -14,8 +14,8 @@
             </div>
               <span>Point: <strong><%= link_to list_element.listable.name %></strong></span>
               <span><%= display_acupoint_of(list_element) %></span>
-              <p style="margin-top: 10px"><% strongify(list_element.listable.coordinates).split(".").each do |p| %>
-                <%= strongify(p)  %> <br><br>
+              <p style="margin-top: 10px"><% list_element.listable.coordinates.split(".").each do |point| %>
+                <%= point %> <br><br>
               <% end %></p>
               <a href="" data-action="click->posology#toggle"
               data-posology-target="link">Voir plus</a>
@@ -26,11 +26,14 @@
           <img src="<%= list_element.listable.photo %>" id="image-saved" alt="">
           <div class="content-saved-text set-posology" data-posology-target="text">
             <h1><%= link_to list_element.listable.name, polymorphic_url(list_element.listable) %></h1>
-             <p style="margin-top: 10px"><% strongify(list_element.listable.description).split(".").each do |p| %>
-                <%= strongify(p)  %> <br><br>
-              <% end %></p>
-            <a href="" data-action="click->posology#toggle"
-            data-posology-target="link">Voir plus</a>
+            <% if list_element.listable.description.present? %>
+              <p style="margin-top: 10px">
+                <% list_element.listable.description.split(".").each do |point| %>
+                  <%= point %> <br><br>
+                <% end %>
+              </p>
+              <a href="" data-action="click->posology#toggle"data-posology-target="link">Voir plus</a>
+            <% end %>
           </div>
         </div>
       <% end %>
