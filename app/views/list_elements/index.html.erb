@@ -15,7 +15,7 @@
               <span>Point: <strong><%= link_to list_element.listable.name %></strong></span>
               <span><%= display_acupoint_of(list_element) %></span>
               <p style="margin-top: 10px"><% list_element.listable.coordinates.split(".").each do |point| %>
-                <%= point %> <br><br>
+                <%= strongify(point) %> <br><br>
               <% end %></p>
               <a href="" data-action="click->posology#toggle"
               data-posology-target="link">Voir plus</a>
@@ -29,7 +29,7 @@
             <% if list_element.listable.description.present? %>
               <p style="margin-top: 10px">
                 <% list_element.listable.description.split(".").each do |point| %>
-                  <%= point %> <br><br>
+                  <%= strongify(point) %> <br><br>
                 <% end %>
               </p>
               <a href="" data-action="click->posology#toggle"data-posology-target="link">Voir plus</a>
