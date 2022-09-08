@@ -3,6 +3,7 @@
 
 
 
+
 <div class="container" data-controller="threejs" data-threejs-scene-path-value="<%= asset_url('scene.glb')%>">
   <div id="top-anchor">
     <div class="head-fixed">
@@ -23,14 +24,19 @@
               <div class="frame-content" id="frame-other">
                 <span><%= index + 1 %></span>
               </div>
-              <span>Point: <strong><%= acupoint.name %></strong></span>
-
-              <span data-action="click->threejs#focus" data-name="<%= acupoint.name %>"><i class="fa-solid fa-eye"></i></span>
+              <div class="eye">
+              <span>Point : <strong><%= acupoint.name %></strong></span>
+                <span data-action="click->threejs#focus" data-name="<%= acupoint.name %>"><i class="fa-solid fa-eye fa-2x"></i></span>
+              </div>
               <p style="margin-top: 10px"><% strongify(acupoint.coordinates).split(".").each do |p| %>
                 <%= strongify(p)  %> <br><br>
               <% end %></p>
-              <a href="" data-action="click->posology#toggle"
-              data-posology-target="link">Voir plus</a>
+              <% if acupoint.coordinates.chars.split(" ").size < 50 %>
+
+              <% else %>
+                <a href="" data-action="click->posology#toggle"
+                data-posology-target="link">Voir plus</a>
+              <% end %>
             </div>
               <div class="button-large" id="margin-b">
                 <% if list_element.present? %>

@@ -5,3 +5,12 @@
 .list-acupoint {
   margin-bottom: 0;
 }
+
+.eye {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .fa-eye {
+    color: #65C18C;
+  }
+}
