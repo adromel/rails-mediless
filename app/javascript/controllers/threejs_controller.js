@@ -2,6 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
+import gsap from 'gsap'
 import { GUI } from 'dat.gui';
 
 
@@ -34,8 +35,8 @@ export default class extends Controller {
     Object.keys(this.pointsCoordinates).forEach((name, index) => {
       const coordinates = this.pointsCoordinates[name]
 
-      const geometry = new THREE.SphereGeometry(0.003, 32, 32); // (radius, widthSegments, heightSegments)
-      const material = new THREE.MeshBasicMaterial( {color: 0xf71b1b} );
+      const geometry = new THREE.SphereGeometry(0.006, 32, 32); // (radius, widthSegments, heightSegments)
+      const material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
       const sphere = new THREE.Mesh(geometry, material);
       sphere.position.set(coordinates.x, coordinates.y, coordinates.z);
       sphere.layers.set(index + 1);
@@ -61,7 +62,6 @@ export default class extends Controller {
     this.scene.background = new THREE.Color( 0xd0f5ee );
     this.camera = new THREE.PerspectiveCamera( 50, this.containerTarget.offsetWidth / this.containerTarget.offsetHeight, 0.01, 10 );
     const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 2);
-    // controls.addEventListener('change', renderer);
 
     window.aa = this.containerTarget
 
@@ -74,21 +74,11 @@ export default class extends Controller {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.maxDistance = 3;
     this.controls.minDistance = 0.2;
-    // this.controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
     this.controls.enablePan = false;
 
     //SPHERE
 
     this.addPoints()
-
-
-    //GUI
-    // const gui = new GUI()
-    // const cameraFolder = gui.addFolder('Camera')
-    // cameraFolder.add(this.camera.position, 'x', 0, 10)
-    // cameraFolder.add(this.camera.position, 'y', 0, 10)
-    // cameraFolder.add(this.camera.position, 'z', 0, 10)
-    // cameraFolder.open()
 
     const that = this
     loader.load( this.scenePathValue, ( gltf ) => {
@@ -100,6 +90,7 @@ export default class extends Controller {
       that.scene.add(body);
       that.scene.add(light);
       that.renderer.render( that.scene, that.camera );
+      console.log(this.camera.position)
     }, undefined, function ( error ) {
 
 	    console.error( error );
@@ -112,8 +103,19 @@ export default class extends Controller {
 
     //ORBITCHANGETARGET
     focus(event) {
+      console.log(this.camera.position)
+      this.camera.position.set(0, 0.2, 3)
       window.scrollTo(0, 0)
       const name = event.currentTarget.dataset.name
       this.controls.target = this.points[name].position
+      const that = this
+      gsap.to( this.camera, {
+        duration: 2,
+        zoom: 13,
+        onUpdate: function () {
+          that.camera.updateProjectionMatrix();
+          that.controls.update();
+        }
+      } );
     };
   };
