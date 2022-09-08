@@ -23,7 +23,7 @@
     <div class="content-saved" data-controller="posology">
       <img src="<%= o.essential_oil.photo %>" id="image-saved" alt="">
       <div class="content-saved-text set-posology" data-posology-target="text">
-        <h1><%= link_to o.essential_oil.name, essential_oil_path %></h1>
+        <h1><%= link_to o.essential_oil.name, essential_oil_path(o.essential_oil) %></h1>
         <p style="margin-top: 10px"><% strongify(o.posology).split(".").each do |p| %>
           <%= strongify(p)  %> <br><br>
         <% end %></p>
