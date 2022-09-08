@@ -2,17 +2,23 @@
   position: fixed;
   height: auto;
   width: 100%;
-  top: 0px;
+  top: 0;
   left: 0;
-  padding-top: 50px;
-  padding-left: 5px;
   background-color: white;
   opacity: 1;
   z-index: 10;
+  display: flex;
+  padding-top: 2em;
+
+  a {
+    margin-left: 2em;
+  }
+
   h1 {
     font-size: 26px;
     color: hsl(146, 38%, 43%);
     font-weight: 700;
+    margin-left: 2em;
   }
 }
 
