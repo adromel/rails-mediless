@@ -10,8 +10,8 @@
   </div>
   <div class="background-content center">
     <%= render 'shared/description' %>
-    <p><% strongify(@essential_oil.description).split(".").each do |p| %>
-      <%= strongify(p)  %> <br><br>
+    <p><% @essential_oil.description.split(".").each do |p| %>
+      <%= p  %> <br><br>
     <% end %></p>
     <div class="button-small mx-1">
       <% if @list_element.present? %>
