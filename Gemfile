@@ -80,3 +80,5 @@ group :test do
 end
 
 gem "awesome_print", "~> 1.9"
+
+gem "pg_search", "~> 2.3"
