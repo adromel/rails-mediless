@@ -9,6 +9,7 @@ export default class extends Controller {
       .then((response) => response.text())
       .then((htmlResult) => {
         this.listTarget.innerHTML = htmlResult;
+        console.log(htmlResult);
       });
   }
   connect() {

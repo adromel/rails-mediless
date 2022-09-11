@@ -4,4 +4,14 @@ class Symptom < ApplicationRecord
 
   has_many :acupoint_treatments
   has_many :acupoints, through: :acupoint_treatments
+
+  include PgSearch::Model
+  pg_search_scope(
+    :pg_search,
+    against: [:name],
+    using: {
+      tsearch: { prefix: true },
+    },
+    ignoring: :accents,
+  )
 end
