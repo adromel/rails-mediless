@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   # get '/symptoms/:id', to: 'symptoms#show'
   resources :list_elements, only: %i[destroy index]
-  
+
   get "/test", to: "pages#test"
   get "threejs", to: "pages#threejs"
 

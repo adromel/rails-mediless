@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_09_085950) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_11_175729) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "acupoint_treatments", id: false, force: :cascade do |t|
     t.bigint "acupoint_id", null: false
